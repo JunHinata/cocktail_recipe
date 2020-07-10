@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,11 +20,11 @@ public class Stock {
     private Integer id;
 
     @ManyToOne(optional = false)
-    @Column(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User stockUser;
 
     @ManyToOne(optional = false)
-    @Column(name = "ingredient_id", nullable = false)
+    @JoinColumn(name = "ingredient_id", nullable = false)
     private Ingredient stockIngredient;
 
     @Column(name = "vol", nullable = false)

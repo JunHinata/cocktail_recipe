@@ -18,6 +18,10 @@ import javax.persistence.Table;
             query = "SELECT u FROM User AS u ORDER BY u.id DESC"
             ),
     @NamedQuery(
+            name = "getUsersCount",
+            query = "SELECT COUNT(u) FROM User AS u"
+            ),
+    @NamedQuery(
             name = "checkRegisteredName",
             query = "SELECT COUNT(u) FROM User AS u WHERE u.name = :name"
             ),

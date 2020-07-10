@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -17,11 +18,11 @@ public class RecipeIngredient {
     private Integer id;
 
     @ManyToOne(optional = false)
-    @Column(name = "recipe_id", nullable = false)
+    @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe makeRecipe;
 
     @ManyToOne(optional = false)
-    @Column(name = "ingredient_id", nullable = false)
+    @JoinColumn(name = "ingredient_id", nullable = false)
     private Ingredient useIngredient;
 
     @Column(name = "type", nullable = false)
