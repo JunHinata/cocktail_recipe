@@ -162,3 +162,15 @@ table#show {
 table#show th {
     background-color: #f3981d;
 }
+
+div#login {
+    text-align: center;
+}
+
+img#symbol {
+    width: 300px;
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
