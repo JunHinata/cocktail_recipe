@@ -121,23 +121,23 @@ body#admin {
     background-color: #0d47a0;
 }
 
-th.id {
+table#user_list .id {
     width: 10%;
 }
 
-th.name {
+table#user_list .name {
     width: 35%;
 }
 
-th.admin {
+table#user_list .admin {
     width: 10%;
 }
 
-th.date {
+table#user_list .date {
     width: 16%;
 }
 
-th.action {
+table#user_list .action {
     width: 13%;
 }
 
@@ -145,10 +145,18 @@ tr.label {
     background-color: #f3981d;
 }
 
-tr.raw1 {
+.raw1 {
     background-color: #ffeddb;
 }
 
-tr.raw0 {
+.raw0 {
     background-color: #ffe5cc;
+}
+
+table#show {
+    width: 65%;
+}
+
+table#show th {
+    background-color: #f3981d;
 }

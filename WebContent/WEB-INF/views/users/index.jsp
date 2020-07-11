@@ -8,8 +8,8 @@
             </div>
         </c:if>
         <h1>ユーザー一覧　管理者専用</h1><br>
-        <button onclick="location.href='/users/new'">新規ユーザー登録</button>
-        <div id="pagination">
+        <a href="<c:url value='/users/new' />">新規ユーザー登録</a>
+        <div class="pagination">
             <c:forEach var="i" begin="1" end="${((users_count - 1) / 30) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
@@ -61,7 +61,7 @@
                 </c:forEach>
             </tbody>
         </table>
-        <div id="pagination">
+        <div class="pagination">
             <c:forEach var="i" begin="1" end="${((users_count - 1) / 30) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
