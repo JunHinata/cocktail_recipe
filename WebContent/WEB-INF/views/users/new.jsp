@@ -47,7 +47,6 @@
             <input type="hidden" name="_token" value="${_token}" />
             <a href="<c:url value='/users/index' />">一覧に戻る</a>
             <button type="submit">ユーザーを登録</button>
-
         </form>
 
     </c:param>
