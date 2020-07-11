@@ -43,7 +43,7 @@
                             <th>削除</th>
                             <td class="row0">
                                 <c:choose>
-                                    <c:when test="${delete_flag == 1}">
+                                    <c:when test="${user.delete_flag == 1}">
                                         削除済み
                                     </c:when>
                                     <c:otherwise>
