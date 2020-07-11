@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="../layout/app_admin.jsp">
     <c:param name="content">
         <c:if test="${flush != null}">
@@ -45,15 +46,15 @@
                                 </c:otherwise>
                             </c:choose>
                         </td>
-                        <td class="date"><c:out value="${user.created_at}" /></td>
-                        <td class="date"><c:out value="${user.updated_at}" /></td>
+                        <td class="date"><fmt:formatDate value="${user.created_at}" pattern="yyyy/MM/dd HH:mm:ss" /></td>
+                        <td class="date"><fmt:formatDate value="${user.updated_at}" pattern="yyyy/MM/dd HH:mm:ss"/></td>
                         <td class="action">
                             <c:choose>
                                 <c:when test="${user.delete_flag == 1}">
-                                    <button onclick="location.href='/users/show?${user.id}'">削除済み</button>
+                                    <a href="<c:url value='/users/show?id=${user.id}' />">削除済み</a>
                                 </c:when>
                                 <c:otherwise>
-                                    <button onclick="location.href='/users/show?${user.id}'">詳細を見る</button>
+                                    <a href="<c:url value='/users/show?id=${user.id}' />">詳細を見る</a>
                                 </c:otherwise>
                             </c:choose>
                         </td>
