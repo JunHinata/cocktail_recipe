@@ -17,28 +17,28 @@
                 <tbody>
                     <tr>
                         <th>ユーザー名</th>
-                        <td class="raw0">
-                            <input type="text" name="name" />
+                        <td class="row0">
+                            <input type="text" name="name" value="${user.name}" />
                         </td>
                     </tr>
                     <tr>
                         <th>メールアドレス</th>
-                        <td class="raw1">
-                            <input type="text" name="email" />
+                        <td class="row1">
+                            <input type="text" name="email" value="${user.email}" />
                         </td>
                     </tr>
                     <tr>
                         <th>パスワード</th>
-                        <td class="raw0">
-                            <input type="password" />
+                        <td class="row0">
+                            <input type="password" name="password" />
                         </td>
                     </tr>
                     <tr>
                         <th>権限</th>
-                        <td class="raw1">
+                        <td class="row1">
                             <select name="admin_flag">
-                                <option value="0">一般</option>
-                                <option value="1">管理者</option>
+                                <option value="0"<c:if test="${user.admin_flag == 0}">selected</c:if>>一般</option>
+                                <option value="1"<c:if test="${user.admin_flag == 1}">selected</c:if>>管理者</option>
                             </select>
                         </td>
                     </tr>
