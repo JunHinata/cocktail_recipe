@@ -36,7 +36,7 @@
                     <tr>
                         <th>アルコール度数</th>
                         <td class="row0">
-                            <input type="number" min="0" max="100" name="abv" value="${ingredient.abv}" />
+                            約 <input type="number" min="0" max="100" name="abv" value="${ingredient.abv}" /> ％
                         </td>
                     </tr>
                     <tr>

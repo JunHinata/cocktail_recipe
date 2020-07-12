@@ -8,7 +8,7 @@
             <img class="icon" src="/cocktail_recipe/images/shelf_w.png" alt="シェルフアイコン" />
                 <h1>材料編集　管理者専用</h1>
 
-                <form method="POST" action="<c:url value='/users/update' />">
+                <form method="POST" action="<c:url value='/ingredients/update' />">
                     <table id="show">
                         <tbody>
                             <tr>
@@ -31,7 +31,7 @@
                             <tr>
                                 <th>アルコール度数</th>
                                 <td class="row0">
-                                    <input type="number" min="0" max="100" name="abv" value="${ingredient.abv}" />
+                                    約 <input type="number" min="0" max="100" name="abv" value="${ingredient.abv}" /> ％
                                 </td>
                             </tr>
                             <tr>
