@@ -93,7 +93,7 @@ img#logo {
     color: #f3981d;
 }
 
-img#icon {
+img.icon {
     width: 60px;
     height: 60px;
     vertical-align: middle;
@@ -173,4 +173,21 @@ img#symbol {
     margin-top: 20px;
     margin-bottom: 20px;
     color: #ffffff;
+}
+
+img.menu_icon {
+    width: 40px;
+    height: 40px;
+}
+
+div#header_menu {
+    width: 40%;
+    display: inline-block;
+    color: #3981d;
+}
+
+div#user_name {
+    width: 30%;
+    display: inline-block;
+    color: #3981d;
 }

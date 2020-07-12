@@ -11,7 +11,20 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <img id="logo" src="${pageContext.request.contextPath}/images/Cockteria.png" alt="Cockteriaのロゴ">
+                <img id="logo" src="/cocktail_recipe/images/Cockteria.png" alt="Cockteriaのロゴ">
+                <div id="header_menu">
+                    <c:if test="${sessionScope.login_user != null}">
+                        <a href="<c:url value='/stocks/index' />"><img class="menu_icon" src="/cocktail_recipe/images/shelf_o.png" alt="在庫管理アイコン"></a>&nbsp;
+                        <a href="<c:url value='/recipe/index' />"><img class="menu_icon" src="/cocktail_recipe/images/recipe_o.png" alt="レシピ検索アイコン"></a>&nbsp;
+                        <a href="<c:url value='/recipe/new' />"><img class="menu_icon" src="/cocktail_recipe/images/myrecipe_o.png" alt="レシピ投稿アイコン"></a>&nbsp;
+                    </c:if>
+                </div>
+                <div id="user_name">
+                    <c:if test="${sessionScope.login_user != null}">
+                        <c:out value="${sessionScope.login_user.name}" />&nbsp;
+                        <a href="<c:url value='/logout' />">ログアウト</a>
+                    </c:if>
+                </div>
             </div>
             <div id="content">
                 ${param.content}
