@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -40,6 +41,7 @@ public class Recipe {
     @Column(name = "technique", nullable = false)
     private String technique;
 
+    @Lob
     @Column(name = "introduction")
     private String introduction;
 

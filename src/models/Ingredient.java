@@ -23,14 +23,14 @@ public class Ingredient {
     @Column(name = "image")
     private byte[] image;
 
-    @Column(name = "type")
+    @Column(name = "type", nullable = false)
     private String type;
 
     @Column(name = "abv", nullable = false)
     private Integer abv;
 
-    @Column(name = "soda", nullable = false)
-    private Integer soda;
+    @Column(name = "soda_flag", nullable = false)
+    private Integer soda_flag;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -73,11 +73,11 @@ public class Ingredient {
         this.abv = abv;
     }
 
-    public Integer getSoda() {
-        return soda;
+    public Integer getSoda_flag() {
+        return soda_flag;
     }
-    public void setSoda(Integer soda) {
-        this.soda = soda;
+    public void setSoda_flag(Integer soda_flag) {
+        this.soda_flag = soda_flag;
     }
 
     public Timestamp getCreated_at() {
