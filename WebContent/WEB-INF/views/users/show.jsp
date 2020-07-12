@@ -71,7 +71,7 @@
             </c:when>
             <c:otherwise>
                 <h1>お探しのデータは見つかりませんでした。</h1>
-                <a href="<c:url value='/users/indes' />">一覧に戻る</a>
+                <a href="<c:url value='/users/index' />">一覧に戻る</a>
             </c:otherwise>
         </c:choose>
     </c:param>
