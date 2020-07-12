@@ -191,3 +191,27 @@ div#user_name {
     display: inline-block;
     color: #3981d;
 }
+
+table#ingredient_list .name {
+    width: 28%;
+}
+
+table#ingredient_list .type {
+    width: 15%;
+}
+
+table#ingredient_list .abv {
+    width: 11%;
+}
+
+table#ingredient_list .soda_flag {
+    width: 8%;
+}
+
+table#ingredient_list .date {
+    width: 25%;
+}
+
+table#ingredient_list .action {
+    width: 13%;
+}
