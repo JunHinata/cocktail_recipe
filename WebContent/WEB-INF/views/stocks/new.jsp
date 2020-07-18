@@ -63,6 +63,7 @@
                 </tbody>
             </table>
             <input type="hidden" name="_token" value="${_token}" />
+            <input type="hidden" name="ingredient_id" value="${ingredient.id}" />
             <a href="<c:url value='/stocks/index' />">在庫管理に戻る</a>
             <button type="submit">この在庫を登録</button>
         </form>
