@@ -1,37 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:import url="/WEB-INF/views/layout/app_admin.jsp">
+<c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${ingredient != null}">
+            <c:when test="${stock != null}">
             <img class="icon" src="/cocktail_recipe/images/shelf_w.png" alt="シェルフアイコン" />
-                <h1>材料詳細　管理者専用</h1>
+                <h1>在庫詳細</h1>
                 <table id="show">
                     <tbody>
                         <tr>
                             <th>材料名</th>
                             <td class="row0">
-                                <c:out value="${ingredient.name}" />
+                                <c:out value="${stock.stockIngredient.name}" />
                             </td>
                         </tr>
                         <tr>
                             <th>分類</th>
                             <td class="row1">
-                                <c:out value="${ingredient.type}" />
+                                <c:out value="${stock.stockIngredient.type}" />
                             </td>
                         </tr>
                         <tr>
                             <th>アルコール度数</th>
                             <td class="row0">
-                                約 <c:out value="${ingredient.abv}" /> ％
+                                約 <c:out value="${stock.stockIngredient.abv}" /> ％
                             </td>
                         </tr>
                         <tr>
                             <th>炭酸</th>
                             <td class="row1">
                                 <c:choose>
-                                    <c:when test="${ingredient.soda_flag == 1}">
+                                    <c:when test="${stock.stockIngredient.soda_flag == 1}">
                                         あり
                                     </c:when>
                                     <c:otherwise>
@@ -41,25 +41,31 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>登録日時</th>
+                            <th>在庫容量/個数</th>
                             <td class="row0">
-                                <fmt:formatDate value="${ingredient.created_at}" pattern="yyyy/MM/dd HH:mm:ss" />
+                                約 <c:out value="${stock.vol}" /> ml
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>コメント</th>
+                            <td class="row1">
+                                <c:out value="${stock.comment}" />
                             </td>
                         </tr>
                         <tr>
                             <th>更新日時</th>
-                            <td class="row1">
-                                <fmt:formatDate value="${ingredient.updated_at}" pattern="yyyy/MM/dd HH:mm:ss" />
+                            <td class="row0">
+                                <fmt:formatDate value="${stock.updated_at}" pattern="yyyy/MM/dd HH:mm:ss" />
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <a href="<c:url value='/ingredients/index' />">一覧に戻る</a>
-                <a href="<c:url value='/ingredients/edit?id=${ingredient.id}' />">この材料を編集</a>
+                <a href="<c:url value='/stocks/index' />">在庫管理に戻る</a>
+                <a href="<c:url value='/stocks/edit?id=${stock.id}' />">この在庫を編集</a>
             </c:when>
             <c:otherwise>
                 <h1>お探しのデータは見つかりませんでした。</h1>
-                <a href="<c:url value='/ingredients/index' />">一覧に戻る</a>
+                <a href="<c:url value='/stocks/index' />">在庫管理に戻る</a>
             </c:otherwise>
         </c:choose>
     </c:param>
