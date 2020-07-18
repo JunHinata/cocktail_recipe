@@ -11,12 +11,12 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <img id="logo" src="/cocktail_recipe/images/Cockteria.png" alt="Cockteriaのロゴ">
+                <a href="<c:url value='/' />"><img id="logo" src="/cocktail_recipe/images/Cockteria.png" alt="Cockteriaのロゴ"></a>
                 <div id="header_menu">
                     <c:if test="${sessionScope.login_user != null}">
                         <a href="<c:url value='/stocks/index' />"><img class="menu_icon" src="/cocktail_recipe/images/shelf_o.png" alt="在庫管理アイコン"></a>&nbsp;
-                        <a href="<c:url value='/recipe/index' />"><img class="menu_icon" src="/cocktail_recipe/images/recipe_o.png" alt="レシピ検索アイコン"></a>&nbsp;
-                        <a href="<c:url value='/recipe/new' />"><img class="menu_icon" src="/cocktail_recipe/images/myrecipe_o.png" alt="レシピ投稿アイコン"></a>&nbsp;
+                        <a href="<c:url value='/recipes/index' />"><img class="menu_icon" src="/cocktail_recipe/images/recipe_o.png" alt="レシピ検索アイコン"></a>&nbsp;
+                        <a href="<c:url value='/recipes/new' />"><img class="menu_icon" src="/cocktail_recipe/images/myrecipe_o.png" alt="レシピ投稿アイコン"></a>&nbsp;
                     </c:if>
                 </div>
                 <div id="user_name">

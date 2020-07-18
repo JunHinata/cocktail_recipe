@@ -10,9 +10,21 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Table(name = "recipes")
+@NamedQueries({
+    @NamedQuery(
+            name = "getAllRecipes",
+            query = "SELECT r FROM Recipe AS r ORDER BY r.id DESC"
+            ),
+    @NamedQuery(
+            name = "getRecipesCount",
+            query = "SELECT COUNT(r) FROM Recipe AS r"
+            )
+})
 @Entity
 public class Recipe {
     @Id
