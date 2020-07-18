@@ -10,9 +10,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Table(name = "stocks")
+@NamedQueries({
+    @NamedQuery(
+            name = "getAllMyStocks",
+            query = "SELECT s FROM Stock AS s WHERE s.stockUser = :user"
+            ),
+    @NamedQuery(
+            name = "getStocksCount",
+            query = "SELECT COUNT(s) FROM Stock AS s WHERE s.stockUser = :user")
+})
 @Entity
 public class Stock {
     @Id

@@ -42,12 +42,12 @@ public class IngredientsIndexServlet extends HttpServlet {
         catch(NumberFormatException e) {
         }
         List<Ingredient> ingredients = em.createNamedQuery("getAllIngredients", Ingredient.class)
-                             .setFirstResult(30 * (page - 1))
-                             .setMaxResults(30)
-                             .getResultList();
+                                         .setFirstResult(30 * (page - 1))
+                                         .setMaxResults(30)
+                                         .getResultList();
 
         long ingredients_count = (long)em.createNamedQuery("getIngredientsCount", Long.class)
-                                   .getSingleResult();
+                                         .getSingleResult();
 
         em.close();
 
