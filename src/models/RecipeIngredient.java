@@ -25,7 +25,7 @@ public class RecipeIngredient {
     @JoinColumn(name = "ingredient_id", nullable = false)
     private Ingredient useIngredient;
 
-    @Column(name = "type", nullable = false)
+    @Column(name = "type")
     private String type;
 
     @Column(name = "vol", nullable = false)
