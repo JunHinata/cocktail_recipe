@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Ingredient;
 import models.Recipe;
 import models.RecipeIngredient;
 import models.User;
@@ -65,6 +66,17 @@ public class RecipesCreateServlet extends HttpServlet {
             List<String> errors = RecipeValidator.validate(r, true);
 
             //RecipeIngredientのプロパティセット
+            Ingredient ing1 = (Ingredient)request.getSession().getAttribute("ing1");
+            Ingredient ing2 = (Ingredient)request.getSession().getAttribute("ing2");
+            Ingredient ing3 = (Ingredient)request.getSession().getAttribute("ing3");
+            Ingredient ing4 = (Ingredient)request.getSession().getAttribute("ing4");
+            Ingredient ing5 = (Ingredient)request.getSession().getAttribute("ing5");
+            Ingredient ing6 = (Ingredient)request.getSession().getAttribute("ing6");
+            Ingredient ing7 = (Ingredient)request.getSession().getAttribute("ing7");
+            Ingredient ing8 = (Ingredient)request.getSession().getAttribute("ing8");
+            Ingredient ing9 = (Ingredient)request.getSession().getAttribute("ing9");
+            Ingredient ing10 = (Ingredient)request.getSession().getAttribute("ing10");
+
             String ing1_vol = request.getParameter("ing1_vol");
             String ing2_vol = request.getParameter("ing2_vol");
             String ing3_vol = request.getParameter("ing3_vol");
@@ -76,68 +88,70 @@ public class RecipesCreateServlet extends HttpServlet {
             String ing9_vol = request.getParameter("ing9_vol");
             String ing10_vol = request.getParameter("ing10_vol");
 
-            RecipeIngredient ri1 = (RecipeIngredient)request.getSession().getAttribute("ing1");
-            if(ri1 != null && !ing1_vol.isEmpty()) {
+
+            RecipeIngredient ri1 = new RecipeIngredient();
+            if(ing1 != null && !ing1_vol.isEmpty()) {
+                ri1.setUseIngredient(ing1);
                 ri1.setMakeRecipe(r);
                 ri1.setVol(Integer.parseInt(ing1_vol));
             }
-
-            RecipeIngredient ri2 = (RecipeIngredient)request.getSession().getAttribute("ing2");
-            if(ri2 != null && !ing2_vol.isEmpty()) {
+            RecipeIngredient ri2 = new RecipeIngredient();
+            if(ing2 != null && !ing2_vol.isEmpty()) {
+                ri2.setUseIngredient(ing2);
                 ri2.setMakeRecipe(r);
                 ri2.setVol(Integer.parseInt(ing2_vol));
             }
-
-            RecipeIngredient ri3 = (RecipeIngredient)request.getSession().getAttribute("ing3");
-            if(ri3 != null && !ing3_vol.isEmpty()) {
+            RecipeIngredient ri3 = new RecipeIngredient();
+            if(ing3 != null && !ing3_vol.isEmpty()) {
+                ri3.setUseIngredient(ing3);
                 ri3.setMakeRecipe(r);
                 ri3.setVol(Integer.parseInt(ing3_vol));
             }
-
-            RecipeIngredient ri4 = (RecipeIngredient)request.getSession().getAttribute("ing4");
-            if(ri4 != null && !ing4_vol.isEmpty()) {
+            RecipeIngredient ri4 = new RecipeIngredient();
+            if(ing4 != null && !ing4_vol.isEmpty()) {
+                ri4.setUseIngredient(ing4);
                 ri4.setMakeRecipe(r);
                 ri4.setVol(Integer.parseInt(ing4_vol));
             }
-
-            RecipeIngredient ri5 = (RecipeIngredient)request.getSession().getAttribute("ing5");
-            if(ri5 != null && !ing5_vol.isEmpty()) {
+            RecipeIngredient ri5 = new RecipeIngredient();
+            if(ing5 != null && !ing5_vol.isEmpty()) {
+                ri5.setUseIngredient(ing5);
                 ri5.setMakeRecipe(r);
                 ri5.setVol(Integer.parseInt(ing5_vol));
             }
-
-            RecipeIngredient ri6 = (RecipeIngredient)request.getSession().getAttribute("ing6");
-            if(ri6 != null && !ing6_vol.isEmpty()) {
+            RecipeIngredient ri6 = new RecipeIngredient();
+            if(ing6 != null && !ing6_vol.isEmpty()) {
+                ri6.setUseIngredient(ing6);
                 ri6.setMakeRecipe(r);
                 ri6.setVol(Integer.parseInt(ing6_vol));
             }
-
-            RecipeIngredient ri7 = (RecipeIngredient)request.getSession().getAttribute("ing7");
-            if(ri7 != null && !ing7_vol.isEmpty()) {
+            RecipeIngredient ri7 = new RecipeIngredient();
+            if(ing7 != null && !ing7_vol.isEmpty()) {
+                ri7.setUseIngredient(ing7);
                 ri7.setMakeRecipe(r);
                 ri7.setVol(Integer.parseInt(ing7_vol));
             }
-
-            RecipeIngredient ri8 = (RecipeIngredient)request.getSession().getAttribute("ing8");
-            if(ri8 != null && !ing8_vol.isEmpty()) {
+            RecipeIngredient ri8 = new RecipeIngredient();
+            if(ing8 != null && !ing8_vol.isEmpty()) {
+                ri8.setUseIngredient(ing8);
                 ri8.setMakeRecipe(r);
                 ri8.setVol(Integer.parseInt(ing8_vol));
             }
-
-            RecipeIngredient ri9 = (RecipeIngredient)request.getSession().getAttribute("ing9");
-            if(ri9 != null && !ing9_vol.isEmpty()) {
+            RecipeIngredient ri9 = new RecipeIngredient();
+            if(ing9 != null && !ing9_vol.isEmpty()) {
+                ri9.setUseIngredient(ing9);
                 ri9.setMakeRecipe(r);
                 ri9.setVol(Integer.parseInt(ing9_vol));
             }
-
-            RecipeIngredient ri10 = (RecipeIngredient)request.getSession().getAttribute("ing10");
-            if(ri10 != null && !ing10_vol.isEmpty()) {
+            RecipeIngredient ri10 = new RecipeIngredient();
+            if(ing10 != null && !ing10_vol.isEmpty()) {
+                ri10.setUseIngredient(ing10);
                 ri10.setMakeRecipe(r);
                 ri10.setVol(Integer.parseInt(ing10_vol));
             }
 
             //RecipeIngredientのエラーチェック
-            List<String> errors_ri = RecipeIngredientValidator.validate(ri1, ri2, ri3, ri4, ri5, ri6, ri7, ri8, ri9, ri10);
+            List<String> errors_ri = RecipeIngredientValidator.validate(ing1, ing1_vol, ing2, ing2_vol, ing3, ing3_vol, ing4, ing4_vol, ing5, ing5_vol, ing6, ing6_vol, ing7, ing7_vol, ing8, ing8_vol, ing9, ing9_vol, ing10, ing10_vol);
             errors.addAll(errors_ri);
 
             if(errors.size() > 0) {
@@ -165,28 +179,28 @@ public class RecipesCreateServlet extends HttpServlet {
                 em.persist(r);
                 em.persist(ri1);
                 em.persist(ri2);
-                if(ri3 != null) {
+                if(ri3.getVol() != null) {
                     em.persist(ri3);
                 }
-                if(ri4 != null) {
+                if(ri4.getVol() != null) {
                     em.persist(ri4);
                 }
-                if(ri5 != null) {
+                if(ri5.getVol() != null) {
                     em.persist(ri5);
                 }
-                if(ri6 != null) {
+                if(ri6.getVol() != null) {
                     em.persist(ri6);
                 }
-                if(ri7 != null) {
+                if(ri7.getVol() != null) {
                     em.persist(ri7);
                 }
-                if(ri8 != null) {
+                if(ri8.getVol() != null) {
                     em.persist(ri8);
                 }
-                if(ri9 != null) {
+                if(ri9.getVol() != null) {
                     em.persist(ri9);
                 }
-                if(ri10 != null) {
+                if(ri10.getVol() != null) {
                     em.persist(ri10);
                 }
                 em.getTransaction().commit();

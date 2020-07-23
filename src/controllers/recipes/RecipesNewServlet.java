@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Ingredient;
 import models.Recipe;
-import models.RecipeIngredient;
 import utils.DBUtil;
 
 /**
@@ -61,93 +60,83 @@ public class RecipesNewServlet extends HttpServlet {
 
                 Integer ing_number = Integer.parseInt(request.getParameter("ing_number"));
                 if(ing_number == 1) {
-                    RecipeIngredient ri1 = (RecipeIngredient)request.getSession().getAttribute("ing1");
+                    Ingredient ri1 = (Ingredient)request.getSession().getAttribute("ing1");
                     if(ri1 == null) {
-                        ri1 = new RecipeIngredient();
+                        ri1 = new Ingredient();
                     }
-                    ri1.setUseIngredient(chose_ing);
-
+                    ri1 = chose_ing;
                     request.getSession().setAttribute("ing1", ri1);
                 }
                 if(ing_number == 2) {
-                    RecipeIngredient ri2 = (RecipeIngredient)request.getSession().getAttribute("ing2");
+                    Ingredient ri2 = (Ingredient)request.getSession().getAttribute("ing2");
                     if(ri2 == null) {
-                        ri2 = new RecipeIngredient();
+                        ri2 = new Ingredient();
                     }
-                    ri2.setUseIngredient(chose_ing);
-
+                    ri2 = chose_ing;
                     request.getSession().setAttribute("ing2", ri2);
                 }
                 if(ing_number == 3) {
-                    RecipeIngredient ri3 = (RecipeIngredient)request.getSession().getAttribute("ing3");
+                    Ingredient ri3 = (Ingredient)request.getSession().getAttribute("ing3");
                     if(ri3 == null) {
-                        ri3 = new RecipeIngredient();
+                        ri3 = new Ingredient();
                     }
-                    ri3.setUseIngredient(chose_ing);
-
+                    ri3 = chose_ing;
                     request.getSession().setAttribute("ing3", ri3);
                 }
                 if(ing_number == 4) {
-                    RecipeIngredient ri4 = (RecipeIngredient)request.getSession().getAttribute("ing4");
+                    Ingredient ri4 = (Ingredient)request.getSession().getAttribute("ing4");
                     if(ri4 == null) {
-                        ri4 = new RecipeIngredient();
+                        ri4 = new Ingredient();
                     }
-                    ri4.setUseIngredient(chose_ing);
-
+                    ri4 = chose_ing;
                     request.getSession().setAttribute("ing4", ri4);
                 }
                 if(ing_number == 5) {
-                    RecipeIngredient ri5 = (RecipeIngredient)request.getSession().getAttribute("ing5");
+                    Ingredient ri5 = (Ingredient)request.getSession().getAttribute("ing5");
                     if(ri5 == null) {
-                        ri5 = new RecipeIngredient();
+                        ri5 = new Ingredient();
                     }
-                    ri5.setUseIngredient(chose_ing);
-
+                    ri5 = chose_ing;
                     request.getSession().setAttribute("ing5", ri5);
                 }
                 if(ing_number == 6) {
-                    RecipeIngredient ri6 = (RecipeIngredient)request.getSession().getAttribute("ing6");
+                    Ingredient ri6 = (Ingredient)request.getSession().getAttribute("ing6");
                     if(ri6 == null) {
-                        ri6 = new RecipeIngredient();
+                        ri6 = new Ingredient();
                     }
-                    ri6.setUseIngredient(chose_ing);
-
+                    ri6 = chose_ing;
                     request.getSession().setAttribute("ing6", ri6);
                 }
                 if(ing_number == 7) {
-                    RecipeIngredient ri7 = (RecipeIngredient)request.getSession().getAttribute("ing7");
+                    Ingredient ri7 = (Ingredient)request.getSession().getAttribute("ing7");
                     if(ri7 == null) {
-                        ri7 = new RecipeIngredient();
+                        ri7 = new Ingredient();
                     }
-                    ri7.setUseIngredient(chose_ing);
-
+                    ri7 = chose_ing;
                     request.getSession().setAttribute("ing7", ri7);
                 }
                 if(ing_number == 8) {
-                    RecipeIngredient ri8 = (RecipeIngredient)request.getSession().getAttribute("ing8");
+                    Ingredient ri8 = (Ingredient)request.getSession().getAttribute("ing8");
                     if(ri8 == null) {
-                        ri8 = new RecipeIngredient();
+                        ri8 = new Ingredient();
                     }
-                    ri8.setUseIngredient(chose_ing);
-
+                    ri8 = chose_ing;
                     request.getSession().setAttribute("ing8", ri8);
                 }
                 if(ing_number == 9) {
-                    RecipeIngredient ri9 = (RecipeIngredient)request.getSession().getAttribute("ing9");
+                    Ingredient ri9 = (Ingredient)request.getSession().getAttribute("ing9");
                     if(ri9 == null) {
-                        ri9 = new RecipeIngredient();
+                        ri9 = new Ingredient();
                     }
-                    ri9.setUseIngredient(chose_ing);
-
+                    ri9 = chose_ing;
                     request.getSession().setAttribute("ing9", ri9);
                 }
                 if(ing_number == 10) {
-                    RecipeIngredient ri10 = (RecipeIngredient)request.getSession().getAttribute("ing10");
+                    Ingredient ri10 = (Ingredient)request.getSession().getAttribute("ing10");
                     if(ri10 == null) {
-                        ri10 = new RecipeIngredient();
+                        ri10 = new Ingredient();
                     }
-                    ri10.setUseIngredient(chose_ing);
-
+                    ri10 = chose_ing;
                     request.getSession().setAttribute("ing10", ri10);
                 }
             }

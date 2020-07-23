@@ -36,17 +36,17 @@
                         <th>色</th>
                         <td class="row0">
                             <select name="color">
-                                <option value="透明"<c:if test="${recipe.type == '透明'}">selected</c:if>>透明</option>
-                                <option value="ブラウン"<c:if test="${recipe.type == 'ブラウン'}">selected</c:if>>ブラウン</option>
-                                <option value="オレンジ"<c:if test="${recipe.type == 'オレンジ'}">selected</c:if>>オレンジ</option>
-                                <option value="ピンク"<c:if test="${recipe.type == 'ピンク'}">selected</c:if>>ピンク</option>
-                                <option value="赤"<c:if test="${recipe.type == '赤'}">selected</c:if>>赤</option>
-                                <option value="黄"<c:if test="${recipe.type == '黄'}">selected</c:if>>黄</option>
-                                <option value="白"<c:if test="${recipe.type == '白'}">selected</c:if>>白</option>
-                                <option value="緑"<c:if test="${recipe.type == '緑'}">selected</c:if>>緑</option>
-                                <option value="青"<c:if test="${recipe.type == '青'}">selected</c:if>>青</option>
-                                <option value="紫"<c:if test="${recipe.type == '紫'}">selected</c:if>>紫</option>
-                                <option value="黒"<c:if test="${recipe.type == '黒'}">selected</c:if>>黒</option>
+                                <option value="透明"<c:if test="${recipe.color == '透明'}">selected</c:if>>透明</option>
+                                <option value="ブラウン"<c:if test="${recipe.color == 'ブラウン'}">selected</c:if>>ブラウン</option>
+                                <option value="オレンジ"<c:if test="${recipe.color == 'オレンジ'}">selected</c:if>>オレンジ</option>
+                                <option value="ピンク"<c:if test="${recipe.color == 'ピンク'}">selected</c:if>>ピンク</option>
+                                <option value="赤"<c:if test="${recipe.color == '赤'}">selected</c:if>>赤</option>
+                                <option value="黄"<c:if test="${recipe.color == '黄'}">selected</c:if>>黄</option>
+                                <option value="白"<c:if test="${recipe.color == '白'}">selected</c:if>>白</option>
+                                <option value="緑"<c:if test="${recipe.color == '緑'}">selected</c:if>>緑</option>
+                                <option value="青"<c:if test="${recipe.color == '青'}">selected</c:if>>青</option>
+                                <option value="紫"<c:if test="${recipe.color == '紫'}">selected</c:if>>紫</option>
+                                <option value="黒"<c:if test="${recipe.color == '黒'}">selected</c:if>>黒</option>
                             </select>
                         </td>
                     </tr>
@@ -95,8 +95,8 @@
                 <h2 class="ingredient">材料</h2>
                 <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="1">
                     <c:choose>
-                        <c:when test="${ing1.useIngredient.name != null}">
-                            <c:out value="${ing1.useIngredient.name}" />
+                        <c:when test="${ing1.name != null}">
+                            <c:out value="${ing1.name}" />
                         </c:when>
                         <c:otherwise>
                             材料1を選択
@@ -107,8 +107,8 @@
                 <br>
                 <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="2">
                     <c:choose>
-                        <c:when test="${ing2.useIngredient.name != null}">
-                            <c:out value="${ing2.useIngredient.name}" />
+                        <c:when test="${ing2.name != null}">
+                            <c:out value="${ing2.name}" />
                         </c:when>
                         <c:otherwise>
                             材料2を選択
@@ -117,11 +117,11 @@
                 </button>
                 <input type="number" min="0" max="500" name="ing2_vol" value="${ing2_vol}" /> ml
                 <br>
-                <c:if test="${ing1.useIngredient.name != null && ing2.useIngredient.name != null}">
+                <c:if test="${ing1.name != null && ing2.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="3">
                         <c:choose>
-                            <c:when test="${ing3.useIngredient.name != null}">
-                                <c:out value="${ing3.useIngredient.name}" />
+                            <c:when test="${ing3.name != null}">
+                                <c:out value="${ing3.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料3を選択
@@ -131,11 +131,11 @@
                     <input type="number" min="0" max="500" name="ing3_vol" value="${ing3_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing3.useIngredient.name != null}">
+                <c:if test="${ing3.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="4">
                         <c:choose>
-                            <c:when test="${ing4.useIngredient.name != null}">
-                                <c:out value="${ing4.useIngredient.name}" />
+                            <c:when test="${ing4.name != null}">
+                                <c:out value="${ing4.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料4を選択
@@ -145,11 +145,11 @@
                     <input type="number" min="0" max="500" name="ing4_vol" value="${ing4_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing4.useIngredient.name != null}">
+                <c:if test="${ing4.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="5">
                         <c:choose>
-                            <c:when test="${ing5.useIngredient.name != null}">
-                                <c:out value="${ing5.useIngredient.name}" />
+                            <c:when test="${ing5.name != null}">
+                                <c:out value="${ing5.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料5を選択
@@ -159,11 +159,11 @@
                     <input type="number" min="0" max="500" name="ing5_vol" value="${ing5_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing5.useIngredient.name != null}">
+                <c:if test="${ing5.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="6">
                         <c:choose>
-                            <c:when test="${ing6.useIngredient.name != null}">
-                                <c:out value="${ing6.useIngredient.name}" />
+                            <c:when test="${ing6.name != null}">
+                                <c:out value="${ing6.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料6を選択
@@ -173,11 +173,11 @@
                     <input type="number" min="0" max="500" name="ing6_vol" value="${ing6_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing6.useIngredient.name != null}">
+                <c:if test="${ing6.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="7">
                         <c:choose>
-                            <c:when test="${ing7.useIngredient.name != null}">
-                                <c:out value="${ing7.useIngredient.name}" />
+                            <c:when test="${ing7.name != null}">
+                                <c:out value="${ing7.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料7を選択
@@ -187,11 +187,11 @@
                     <input type="number" min="0" max="500" name="ing7_vol" value="${ing7_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing7.useIngredient.name != null}">
+                <c:if test="${ing7.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="8">
                         <c:choose>
-                            <c:when test="${ing8.useIngredient.name != null}">
-                                <c:out value="${ing8.useIngredient.name}" />
+                            <c:when test="${ing8.name != null}">
+                                <c:out value="${ing8.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料8を選択
@@ -201,11 +201,11 @@
                     <input type="number" min="0" max="500" name="ing8_vol" value="${ing8_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing8.useIngredient.name != null}">
+                <c:if test="${ing8.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="9">
                         <c:choose>
-                            <c:when test="${ing9.useIngredient.name != null}">
-                                <c:out value="${ing9.useIngredient.name}" />
+                            <c:when test="${ing9.name != null}">
+                                <c:out value="${ing9.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料9を選択
@@ -215,11 +215,11 @@
                     <input type="number" min="0" max="500" name="ing9_vol" value="${ing9_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing9.useIngredient.name != null}">
+                <c:if test="${ing9.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="10">
                         <c:choose>
-                            <c:when test="${ing10.useIngredient.name != null}">
-                                <c:out value="${ing10.useIngredient.name}" />
+                            <c:when test="${ing10.name != null}">
+                                <c:out value="${ing10.name}" />
                             </c:when>
                             <c:otherwise>
                                 材料10を選択
@@ -229,7 +229,7 @@
                     <input type="number" min="0" max="500" name="ing10_vol" value="${ing10_vol}" /> ml
                     <br>
                 </c:if>
-                <c:if test="${ing3.useIngredient.name != null}">
+                <c:if test="${ing3.name != null}">
                     <button type="submit" formaction="<c:url value='/recipes/new' />" name="remove_flag" value="1">材料を1つ取消</button>
                 </c:if>
             </div>
