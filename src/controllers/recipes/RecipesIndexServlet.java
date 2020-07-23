@@ -1,6 +1,7 @@
 package controllers.recipes;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Recipe;
+import models.RecipeIngredient;
 import utils.DBUtil;
 
 /**
@@ -49,10 +51,18 @@ public class RecipesIndexServlet extends HttpServlet {
         long recipes_count = (long)em.createNamedQuery("getRecipesCount", Long.class)
                                      .getSingleResult();
 
+        List<RecipeIngredient> ingredients = new ArrayList<RecipeIngredient>();
+        for(int i = 0; i < recipes.size(); i++) {
+            ingredients.addAll(em.createNamedQuery("getIngredients", RecipeIngredient.class)
+                                 .setParameter("makeRecipe", recipes.get(i))
+                                 .getResultList());
+        }
+
         em.close();
 
         request.setAttribute("recipes", recipes);
         request.setAttribute("recipes_count", recipes_count);
+        request.setAttribute("ingredients", ingredients);
         request.setAttribute("page", page);
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));

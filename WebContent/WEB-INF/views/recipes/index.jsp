@@ -42,10 +42,13 @@
                     <h2 class="cocktail_name"><c:out value="${recipe.name}" /></h2>
                     <table class="ingredients">
                         <tbody>
-                            <c:forEach var="recipe_ingredient" items="${recipe_ingredients}" varStatus="status">
+                            <c:forEach var="ingredient" items="${ingredients}" varStatus="status">
                                 <tr>
-                                    <th><c:out value="${recipe_ingredient.name}" /></th>
-                                    <td><c:out value="${recipe_ingredient.vol}" /></td>
+                                    <c:if test="${recipe.id == ingredient.makeRecipe.id}">
+                                        <th><c:out value="${ingredient.useIngredient.name}" /></th>
+                                        <td><c:out value="${ingredient.vol}" /> ml</td>
+                                        <br>
+                                    </c:if>
                                 </tr>
                             </c:forEach>
                         </tbody>

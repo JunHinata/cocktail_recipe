@@ -23,6 +23,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getRecipesCount",
             query = "SELECT COUNT(r) FROM Recipe AS r"
+            ),
+    @NamedQuery(
+            name = "checkRegisteredRecipeName",
+            query = "SELECT COUNT(r) FROM Recipe AS r WHERE r.name = :name"
             )
 })
 @Entity
@@ -32,7 +36,7 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "image")
