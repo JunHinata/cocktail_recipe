@@ -93,7 +93,7 @@
             </table>
             <div class="ingredient">
                 <h2 class="ingredient">材料</h2>
-                <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="1">
+                <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="1">
                     <c:choose>
                         <c:when test="${ing1.name != null}">
                             <c:out value="${ing1.name}" />
@@ -105,7 +105,7 @@
                 </button>
                 <input type="number" min="0" max="500" name="ing1_vol" value="${ing1_vol}" /> ml
                 <br>
-                <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="2">
+                <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="2">
                     <c:choose>
                         <c:when test="${ing2.name != null}">
                             <c:out value="${ing2.name}" />
@@ -118,7 +118,7 @@
                 <input type="number" min="0" max="500" name="ing2_vol" value="${ing2_vol}" /> ml
                 <br>
                 <c:if test="${ing1.name != null && ing2.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="3">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="3">
                         <c:choose>
                             <c:when test="${ing3.name != null}">
                                 <c:out value="${ing3.name}" />
@@ -132,7 +132,7 @@
                     <br>
                 </c:if>
                 <c:if test="${ing3.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="4">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="4">
                         <c:choose>
                             <c:when test="${ing4.name != null}">
                                 <c:out value="${ing4.name}" />
@@ -146,7 +146,7 @@
                     <br>
                 </c:if>
                 <c:if test="${ing4.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="5">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="5">
                         <c:choose>
                             <c:when test="${ing5.name != null}">
                                 <c:out value="${ing5.name}" />
@@ -160,7 +160,7 @@
                     <br>
                 </c:if>
                 <c:if test="${ing5.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="6">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="6">
                         <c:choose>
                             <c:when test="${ing6.name != null}">
                                 <c:out value="${ing6.name}" />
@@ -174,7 +174,7 @@
                     <br>
                 </c:if>
                 <c:if test="${ing6.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="7">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="7">
                         <c:choose>
                             <c:when test="${ing7.name != null}">
                                 <c:out value="${ing7.name}" />
@@ -188,7 +188,7 @@
                     <br>
                 </c:if>
                 <c:if test="${ing7.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="8">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="8">
                         <c:choose>
                             <c:when test="${ing8.name != null}">
                                 <c:out value="${ing8.name}" />
@@ -202,7 +202,7 @@
                     <br>
                 </c:if>
                 <c:if test="${ing8.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="9">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="9">
                         <c:choose>
                             <c:when test="${ing9.name != null}">
                                 <c:out value="${ing9.name}" />
@@ -216,7 +216,7 @@
                     <br>
                 </c:if>
                 <c:if test="${ing9.name != null}">
-                    <button type="submit" formaction="<c:url value='/recipes/ingredient' />" name="ing_number" value="10">
+                    <button type="submit" formaction="<c:url value='/recipes/ingredient_new' />" name="ing_number" value="10">
                         <c:choose>
                             <c:when test="${ing10.name != null}">
                                 <c:out value="${ing10.name}" />

@@ -18,14 +18,14 @@ import utils.DBUtil;
 /**
  * Servlet implementation class RecipesIngredientServlet
  */
-@WebServlet("/recipes/ingredient")
-public class RecipesIngredientServlet extends HttpServlet {
+@WebServlet("/recipes/ingredient_new")
+public class RecipesIngredientNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecipesIngredientServlet() {
+    public RecipesIngredientNewServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -82,7 +82,7 @@ public class RecipesIngredientServlet extends HttpServlet {
             request.setAttribute("ing9_vol", request.getParameter("ing9_vol"));
             request.setAttribute("ing10_vol", request.getParameter("ing10_vol"));
 
-            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/ingredient.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/ingredient_new.jsp");
             rd.forward(request, response);
         }
     }
