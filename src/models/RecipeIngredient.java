@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getIngredients",
-            query = "SELECT i FROM RecipeIngredient AS i WHERE i.makeRecipe = :makeRecipe"
+            query = "SELECT i FROM RecipeIngredient AS i WHERE i.makeRecipe = :makeRecipe ORDER BY i.id ASC"
             )
 })
 

@@ -60,84 +60,84 @@ public class RecipesNewServlet extends HttpServlet {
 
                 Integer ing_number = Integer.parseInt(request.getParameter("ing_number"));
                 if(ing_number == 1) {
-                    Ingredient ri1 = (Ingredient)request.getSession().getAttribute("ing1");
-                    if(ri1 == null) {
-                        ri1 = new Ingredient();
+                    Ingredient i1 = (Ingredient)request.getSession().getAttribute("ing1");
+                    if(i1 == null) {
+                        i1 = new Ingredient();
                     }
-                    ri1 = chose_ing;
-                    request.getSession().setAttribute("ing1", ri1);
+                    i1 = chose_ing;
+                    request.getSession().setAttribute("ing1", i1);
                 }
                 if(ing_number == 2) {
-                    Ingredient ri2 = (Ingredient)request.getSession().getAttribute("ing2");
-                    if(ri2 == null) {
-                        ri2 = new Ingredient();
+                    Ingredient i2 = (Ingredient)request.getSession().getAttribute("ing2");
+                    if(i2 == null) {
+                        i2 = new Ingredient();
                     }
-                    ri2 = chose_ing;
-                    request.getSession().setAttribute("ing2", ri2);
+                    i2 = chose_ing;
+                    request.getSession().setAttribute("ing2", i2);
                 }
                 if(ing_number == 3) {
-                    Ingredient ri3 = (Ingredient)request.getSession().getAttribute("ing3");
-                    if(ri3 == null) {
-                        ri3 = new Ingredient();
+                    Ingredient i3 = (Ingredient)request.getSession().getAttribute("ing3");
+                    if(i3 == null) {
+                        i3 = new Ingredient();
                     }
-                    ri3 = chose_ing;
-                    request.getSession().setAttribute("ing3", ri3);
+                    i3 = chose_ing;
+                    request.getSession().setAttribute("ing3", i3);
                 }
                 if(ing_number == 4) {
-                    Ingredient ri4 = (Ingredient)request.getSession().getAttribute("ing4");
-                    if(ri4 == null) {
-                        ri4 = new Ingredient();
+                    Ingredient i4 = (Ingredient)request.getSession().getAttribute("ing4");
+                    if(i4 == null) {
+                        i4 = new Ingredient();
                     }
-                    ri4 = chose_ing;
-                    request.getSession().setAttribute("ing4", ri4);
+                    i4 = chose_ing;
+                    request.getSession().setAttribute("ing4", i4);
                 }
                 if(ing_number == 5) {
-                    Ingredient ri5 = (Ingredient)request.getSession().getAttribute("ing5");
-                    if(ri5 == null) {
-                        ri5 = new Ingredient();
+                    Ingredient i5 = (Ingredient)request.getSession().getAttribute("ing5");
+                    if(i5 == null) {
+                        i5 = new Ingredient();
                     }
-                    ri5 = chose_ing;
-                    request.getSession().setAttribute("ing5", ri5);
+                    i5 = chose_ing;
+                    request.getSession().setAttribute("ing5", i5);
                 }
                 if(ing_number == 6) {
-                    Ingredient ri6 = (Ingredient)request.getSession().getAttribute("ing6");
-                    if(ri6 == null) {
-                        ri6 = new Ingredient();
+                    Ingredient i6 = (Ingredient)request.getSession().getAttribute("ing6");
+                    if(i6 == null) {
+                        i6 = new Ingredient();
                     }
-                    ri6 = chose_ing;
-                    request.getSession().setAttribute("ing6", ri6);
+                    i6 = chose_ing;
+                    request.getSession().setAttribute("ing6", i6);
                 }
                 if(ing_number == 7) {
-                    Ingredient ri7 = (Ingredient)request.getSession().getAttribute("ing7");
-                    if(ri7 == null) {
-                        ri7 = new Ingredient();
+                    Ingredient i7 = (Ingredient)request.getSession().getAttribute("ing7");
+                    if(i7 == null) {
+                        i7 = new Ingredient();
                     }
-                    ri7 = chose_ing;
-                    request.getSession().setAttribute("ing7", ri7);
+                    i7 = chose_ing;
+                    request.getSession().setAttribute("ing7", i7);
                 }
                 if(ing_number == 8) {
-                    Ingredient ri8 = (Ingredient)request.getSession().getAttribute("ing8");
-                    if(ri8 == null) {
-                        ri8 = new Ingredient();
+                    Ingredient i8 = (Ingredient)request.getSession().getAttribute("ing8");
+                    if(i8 == null) {
+                        i8 = new Ingredient();
                     }
-                    ri8 = chose_ing;
-                    request.getSession().setAttribute("ing8", ri8);
+                    i8 = chose_ing;
+                    request.getSession().setAttribute("ing8", i8);
                 }
                 if(ing_number == 9) {
-                    Ingredient ri9 = (Ingredient)request.getSession().getAttribute("ing9");
-                    if(ri9 == null) {
-                        ri9 = new Ingredient();
+                    Ingredient i9 = (Ingredient)request.getSession().getAttribute("ing9");
+                    if(i9 == null) {
+                        i9 = new Ingredient();
                     }
-                    ri9 = chose_ing;
-                    request.getSession().setAttribute("ing9", ri9);
+                    i9 = chose_ing;
+                    request.getSession().setAttribute("ing9", i9);
                 }
                 if(ing_number == 10) {
-                    Ingredient ri10 = (Ingredient)request.getSession().getAttribute("ing10");
-                    if(ri10 == null) {
-                        ri10 = new Ingredient();
+                    Ingredient i10 = (Ingredient)request.getSession().getAttribute("ing10");
+                    if(i10 == null) {
+                        i10 = new Ingredient();
                     }
-                    ri10 = chose_ing;
-                    request.getSession().setAttribute("ing10", ri10);
+                    i10 = chose_ing;
+                    request.getSession().setAttribute("ing10", i10);
                 }
             }
 
