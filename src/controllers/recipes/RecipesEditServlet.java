@@ -88,6 +88,7 @@ public class RecipesEditServlet extends HttpServlet {
 
         request.getSession().setAttribute("recipe", r);
         request.setAttribute("_token", request.getSession().getId());
+        request.getSession().setAttribute("recipe_id", r.getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/edit.jsp");
         rd.forward(request, response);

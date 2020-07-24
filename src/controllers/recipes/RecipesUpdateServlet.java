@@ -15,22 +15,21 @@ import javax.servlet.http.HttpServletResponse;
 import models.Ingredient;
 import models.Recipe;
 import models.RecipeIngredient;
-import models.User;
 import models.validators.RecipeIngredientValidator;
 import models.validators.RecipeValidator;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class RecipesCreateServlet
+ * Servlet implementation class RecipesUpdateServlet
  */
-@WebServlet("/recipes/create")
-public class RecipesCreateServlet extends HttpServlet {
+@WebServlet("/recipes/update")
+public class RecipesUpdateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecipesCreateServlet() {
+    public RecipesUpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,26 +43,29 @@ public class RecipesCreateServlet extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
 
             //Recipeのプロパティセット
-            Recipe r = new Recipe();
+            Recipe r = em.find(Recipe.class, (Integer)request.getSession().getAttribute("recipe_id"));
 
-            r.setName(request.getParameter("name"));
+            //現在の値と異なるカクテル名が入力されていたら重複チェックフラグを立てる
+            Boolean name_duplicate_check_flag = true;
+            if(r.getName().equals(request.getParameter("name"))) {
+                name_duplicate_check_flag = false;
+            }
+            else{
+                r.setName(request.getParameter("name"));
+            }
+
             r.setType(request.getParameter("type"));
             r.setColor(request.getParameter("color"));
             r.setTaste(request.getParameter("taste"));
             r.setGlass(request.getParameter("glass"));
             r.setTechnique(request.getParameter("technique"));
             r.setIntroduction(request.getParameter("introduction"));
-            r.setDelete_flag(0);
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-            r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
 
-            User login_user = (User)request.getSession().getAttribute("login_user");
-            r.setCreateUser(login_user);
-
             //Recipeのエラーチェック
-            List<String> errors = RecipeValidator.validate(r, true);
+            List<String> errors = RecipeValidator.validate(r, name_duplicate_check_flag);
 
             //RecipeIngredientのプロパティセット
             Ingredient ing1 = (Ingredient)request.getSession().getAttribute("ing1");
@@ -171,10 +173,14 @@ public class RecipesCreateServlet extends HttpServlet {
                 request.setAttribute("ing9_vol", ing9_vol);
                 request.setAttribute("ing10_vol", ing10_vol);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/new.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/edit.jsp");
                 rd.forward(request, response);
             }
             else {
+                List<RecipeIngredient> ingredients = em.createNamedQuery("getIngredients", RecipeIngredient.class)
+                        .setParameter("makeRecipe", r)
+                        .getResultList();
+
                 em.getTransaction().begin();
                 em.persist(r);
                 em.persist(ri1);
@@ -203,20 +209,55 @@ public class RecipesCreateServlet extends HttpServlet {
                 if(ri10.getVol() != null) {
                     em.persist(ri10);
                 }
+
+                //既存のRecipeIngredientを削除
+                if(ingredients.size() >= 1) {
+                    RecipeIngredient remove_ing1 = ingredients.get(0);
+                    em.remove(remove_ing1);
+                }
+                if(ingredients.size() >= 2) {
+                    RecipeIngredient remove_ing2 = ingredients.get(1);
+                    em.remove(remove_ing2);
+                }
+                if(ingredients.size() >= 3) {
+                    RecipeIngredient remove_ing3 = ingredients.get(2);
+                    em.remove(remove_ing3);
+                }
+                if(ingredients.size() >= 4) {
+                    RecipeIngredient remove_ing4 = ingredients.get(3);
+                    em.remove(remove_ing4);
+                }
+                if(ingredients.size() >= 5) {
+                    RecipeIngredient remove_ing5 = ingredients.get(4);
+                    em.remove(remove_ing5);
+                }
+                if(ingredients.size() >= 6) {
+                    RecipeIngredient remove_ing6 = ingredients.get(5);
+                    em.remove(remove_ing6);
+                }
+                if(ingredients.size() >= 7) {
+                    RecipeIngredient remove_ing7 = ingredients.get(6);
+                    em.remove(remove_ing7);
+                }
+                if(ingredients.size() >= 8) {
+                    RecipeIngredient remove_ing8 = ingredients.get(7);
+                    em.remove(remove_ing8);
+                }
+                if(ingredients.size() >= 9) {
+                    RecipeIngredient remove_ing9 = ingredients.get(8);
+                    em.remove(remove_ing9);
+                }
+                if(ingredients.size() == 10) {
+                    RecipeIngredient remove_ing10 = ingredients.get(9);
+                    em.remove(remove_ing10);
+                }
+
                 em.getTransaction().commit();
                 em.close();
-                request.getSession().setAttribute("flush", "レシピ投稿が完了しました。");
+                request.getSession().setAttribute("flush", "レシピ更新が完了しました。");
 
-                request.getSession().removeAttribute("ing1");
-                request.getSession().removeAttribute("ing2");
-                request.getSession().removeAttribute("ing3");
-                request.getSession().removeAttribute("ing4");
-                request.getSession().removeAttribute("ing5");
-                request.getSession().removeAttribute("ing6");
-                request.getSession().removeAttribute("ing7");
-                request.getSession().removeAttribute("ing8");
-                request.getSession().removeAttribute("ing9");
-                request.getSession().removeAttribute("ing10");
+                request.getSession().removeAttribute("recipe");
+                request.getSession().removeAttribute("recipe_id");
 
                 response.sendRedirect(request.getContextPath() + "/recipes/index");
             }

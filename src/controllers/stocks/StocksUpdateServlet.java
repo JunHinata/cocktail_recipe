@@ -62,7 +62,7 @@ public class StocksUpdateServlet extends HttpServlet {
                 em.close();
                 request.getSession().setAttribute("flush", "更新が完了しました。");
 
-                request.getSession().removeAttribute("ingredient_id");
+                request.getSession().removeAttribute("stock_id");
 
                 response.sendRedirect(request.getContextPath() + "/stocks/index");
             }
