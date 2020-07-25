@@ -31,7 +31,7 @@
                             <tr>
                                 <th>パスワード</th>
                                 <td class="row1">
-                                    <input type="password" name="password" />
+                                    <input type="text" name="password" autocomplete="off" />
                                 </td>
                             </tr>
                             <tr>
