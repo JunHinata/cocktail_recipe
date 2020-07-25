@@ -43,7 +43,7 @@
                     </tr>
                 </c:forEach>
                 <c:forEach var="no_stock" items="${no_stocks}" varStatus="status">
-                    <tr class="row${status.count % 2}">
+                    <tr class="gray_row${status.count % 2}">
                         <td class="name"><c:out value="${no_stock.name}" /></td>
                         <td class="type"><c:out value="${no_stock.type}" /></td>
                         <td class="vol">在庫なし</td>
