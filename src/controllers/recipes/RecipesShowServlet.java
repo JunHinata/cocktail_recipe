@@ -42,21 +42,35 @@ public class RecipesShowServlet extends HttpServlet {
                                                .setParameter("makeRecipe", r)
                                                .getResultList();
 
-        //レシピのアルコール度数を計算
+        //レシピのアルコール度数計算の可否
+        Boolean abv_cal_flag = true;
+        for(int i = 0; i < ingredients.size(); i++) {
+            if(ingredients.get(i).getType().equals("適量")) {
+                abv_cal_flag = false;
+                break;
+            }
+        }
+
+        //可能ならレシピのアルコール度数を計算、不可なら"不明"とする
         Integer total_vol = 0;
         Double total_alc = 0.0;
-        for(int i = 0; i < ingredients.size(); i++) {
-            total_vol += ingredients.get(i).getVol();
-            total_alc += ingredients.get(i).getVol() * (ingredients.get(i).getUseIngredient().getAbv() * 0.01);
+        if(abv_cal_flag) {
+            for(int i = 0; i < ingredients.size(); i++) {
+                total_vol += ingredients.get(i).getVol();
+                total_alc += ingredients.get(i).getVol() * (ingredients.get(i).getUseIngredient().getAbv() * 0.01);
+            }
+            long recipe_abv = Math.round(total_alc / total_vol * 100);
+            request.setAttribute("recipe_abv", "約 " + recipe_abv + " ％");
         }
-        long recipe_abv = Math.round(total_alc / total_vol * 100);
+        else {
+            request.setAttribute("recipe_abv", "不明");
+        }
 
         em.close();
 
         request.setAttribute("_token", request.getSession().getId());
         request.setAttribute("recipe", r);
         request.setAttribute("ingredients", ingredients);
-        request.setAttribute("recipe_abv", recipe_abv);
         request.setAttribute("_token", request.getSession().getId());
         request.getSession().setAttribute("recipe_id", r.getId());
 

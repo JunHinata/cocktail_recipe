@@ -48,7 +48,7 @@
                         <tr>
                             <th>アルコール度数</th>
                             <td class="row0">
-                                約 <c:out value="${recipe_abv}" /> ％
+                                <c:out value="${recipe_abv}" />
                             </td>
                         </tr>
                     </tbody>
@@ -57,7 +57,11 @@
                     <h2 class="ingredient">材料</h2>
                     <c:forEach var="ingredient" items="${ingredients}" varStatus="status">
                         <c:out value="${ingredient.useIngredient.name}" />
-                        <c:out value="${ingredient.vol}" /> ml
+                        <c:if test="${ingredient.type == 'ml'}"><c:out value="${ingredient.vol}" /> ml</c:if>
+                        <c:if test="${ingredient.type == 'tsp'}"><c:out value="${ingredient.vol}" /> tsp</c:if>
+                        <c:if test="${ingredient.type == 'dash'}"><c:out value="${ingredient.vol}" /> dash</c:if>
+                        <c:if test="${ingredient.type == '個'}"><c:out value="${ingredient.vol}" /> 個</c:if>
+                        <c:if test="${ingredient.type == '適量'}"> 適量</c:if>
                         <br>
                     </c:forEach>
                 </div>

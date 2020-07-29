@@ -104,7 +104,18 @@
                         </c:otherwise>
                     </c:choose>
                 </button>
-                <input type="number" min="0" max="500" name="ing1_vol" value="${ing1_vol}" /> ml
+                <c:if test="${ing1.name != null}">
+                    <input type="number" min="0" max="500" name="ing1_vol" value="${ing1_vol}" />
+                    <select name="ing1_type">
+                        <option value="ml"<c:if test="${ing1_type == 'ml'}">selected</c:if>>ml</option>
+                        <option value="tsp"<c:if test="${ing1_type == 'tsp'}">selected</c:if>>tsp</option>
+                        <option value="dash"<c:if test="${ing1_type == 'dash'}">selected</c:if>>dash</option>
+                        <c:if test="${ing1.type == '副材料'}">
+                            <option value="個"<c:if test="${ing1_type == '個'}">selected</c:if>>個</option>
+                            <option value="適量"<c:if test="${ing1_type == '適量'}">selected</c:if>>適量</option>
+                        </c:if>
+                    </select>
+                </c:if>
                 <br>
                 <button type="submit" form="edit" formaction="<c:url value='/recipes/ingredient_edit' />" name="ing_number" value="2">
                     <c:choose>
@@ -116,7 +127,18 @@
                         </c:otherwise>
                     </c:choose>
                 </button>
-                <input type="number" min="0" max="500" name="ing2_vol" value="${ing2_vol}" /> ml
+                <c:if test="${ing2.name != null}">
+                    <input type="number" min="0" max="500" name="ing2_vol" value="${ing2_vol}" />
+                    <select name="ing2_type">
+                        <option value="ml"<c:if test="${ing2_type == 'ml'}">selected</c:if>>ml</option>
+                        <option value="tsp"<c:if test="${ing2_type == 'tsp'}">selected</c:if>>tsp</option>
+                        <option value="dash"<c:if test="${ing2_type == 'dash'}">selected</c:if>>dash</option>
+                        <c:if test="${ing2.type == '副材料'}">
+                            <option value="個"<c:if test="${ing2_type == '個'}">selected</c:if>>個</option>
+                            <option value="適量"<c:if test="${ing2_type == '適量'}">selected</c:if>>適量</option>
+                        </c:if>
+                    </select>
+                </c:if>
                 <br>
                 <c:if test="${ing1.name != null && ing2.name != null}">
                     <button type="submit" form="edit" formaction="<c:url value='/recipes/ingredient_edit' />" name="ing_number" value="3">
@@ -129,7 +151,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing3_vol" value="${ing3_vol}" /> ml
+                    <c:if test="${ing3.name != null}">
+                        <input type="number" min="0" max="500" name="ing3_vol" value="${ing3_vol}" />
+                        <select name="ing3_type">
+                            <option value="ml"<c:if test="${ing3_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing3_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing3_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing3.type == '副材料'}">
+                                <option value="個"<c:if test="${ing3_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing3_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing3.name != null}">
@@ -143,7 +176,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing4_vol" value="${ing4_vol}" /> ml
+                    <c:if test="${ing4.name != null}">
+                        <input type="number" min="0" max="500" name="ing4_vol" value="${ing4_vol}" />
+                        <select name="ing4_type">
+                            <option value="ml"<c:if test="${ing4_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing4_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing4_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing4.type == '副材料'}">
+                                <option value="個"<c:if test="${ing4_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing4_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing4.name != null}">
@@ -157,7 +201,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing5_vol" value="${ing5_vol}" /> ml
+                    <c:if test="${ing5.name != null}">
+                        <input type="number" min="0" max="500" name="ing5_vol" value="${ing5_vol}" />
+                        <select name="ing5_type">
+                            <option value="ml"<c:if test="${ing5_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing5_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing5_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing5.type == '副材料'}">
+                                <option value="個"<c:if test="${ing5_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing5_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing5.name != null}">
@@ -171,7 +226,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing6_vol" value="${ing6_vol}" /> ml
+                    <c:if test="${ing6.name != null}">
+                        <input type="number" min="0" max="500" name="ing6_vol" value="${ing6_vol}" />
+                        <select name="ing6_type">
+                            <option value="ml"<c:if test="${ing6_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing6_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing6_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing6.type == '副材料'}">
+                                <option value="個"<c:if test="${ing6_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing6_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing6.name != null}">
@@ -185,7 +251,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing7_vol" value="${ing7_vol}" /> ml
+                    <c:if test="${ing7.name != null}">
+                        <input type="number" min="0" max="500" name="ing7_vol" value="${ing7_vol}" />
+                        <select name="ing7_type">
+                            <option value="ml"<c:if test="${ing7_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing7_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing7_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing7.type == '副材料'}">
+                                <option value="個"<c:if test="${ing7_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing7_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing7.name != null}">
@@ -199,7 +276,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing8_vol" value="${ing8_vol}" /> ml
+                    <c:if test="${ing8.name != null}">
+                        <input type="number" min="0" max="500" name="ing8_vol" value="${ing8_vol}" />
+                        <select name="ing8_type">
+                            <option value="ml"<c:if test="${ing8_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing8_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing8_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing8.type == '副材料'}">
+                                <option value="個"<c:if test="${ing8_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing8_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing8.name != null}">
@@ -213,7 +301,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing9_vol" value="${ing9_vol}" /> ml
+                    <c:if test="${ing9.name != null}">
+                        <input type="number" min="0" max="500" name="ing9_vol" value="${ing9_vol}" />
+                        <select name="ing9_type">
+                            <option value="ml"<c:if test="${ing9_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing9_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing9_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing9.type == '副材料'}">
+                                <option value="個"<c:if test="${ing9_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing9_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing9.name != null}">
@@ -227,7 +326,18 @@
                             </c:otherwise>
                         </c:choose>
                     </button>
-                    <input type="number" min="0" max="500" name="ing10_vol" value="${ing10_vol}" /> ml
+                    <c:if test="${ing10.name != null}">
+                        <input type="number" min="0" max="500" name="ing10_vol" value="${ing10_vol}" />
+                        <select name="ing10_type">
+                            <option value="ml"<c:if test="${ing10_type == 'ml'}">selected</c:if>>ml</option>
+                            <option value="tsp"<c:if test="${ing10_type == 'tsp'}">selected</c:if>>tsp</option>
+                            <option value="dash"<c:if test="${ing10_type == 'dash'}">selected</c:if>>dash</option>
+                            <c:if test="${ing10.type == '副材料'}">
+                                <option value="個"<c:if test="${ing10_type == '個'}">selected</c:if>>個</option>
+                                <option value="適量"<c:if test="${ing10_type == '適量'}">selected</c:if>>適量</option>
+                            </c:if>
+                        </select>
+                    </c:if>
                     <br>
                 </c:if>
                 <c:if test="${ing3.name != null}">

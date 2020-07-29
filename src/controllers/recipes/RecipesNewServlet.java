@@ -143,55 +143,73 @@ public class RecipesNewServlet extends HttpServlet {
 
             em.close();
 
-        request.setAttribute("_token", _token);
-        request.setAttribute("ing1_vol", request.getParameter("ing1_vol"));
-        request.setAttribute("ing2_vol", request.getParameter("ing2_vol"));
-        request.setAttribute("ing3_vol", request.getParameter("ing3_vol"));
-        request.setAttribute("ing4_vol", request.getParameter("ing4_vol"));
-        request.setAttribute("ing5_vol", request.getParameter("ing5_vol"));
-        request.setAttribute("ing6_vol", request.getParameter("ing6_vol"));
-        request.setAttribute("ing7_vol", request.getParameter("ing7_vol"));
-        request.setAttribute("ing8_vol", request.getParameter("ing8_vol"));
-        request.setAttribute("ing9_vol", request.getParameter("ing9_vol"));
-        request.setAttribute("ing10_vol", request.getParameter("ing10_vol"));
+            request.setAttribute("_token", _token);
+            request.setAttribute("ing1_vol", request.getParameter("ing1_vol"));
+            request.setAttribute("ing2_vol", request.getParameter("ing2_vol"));
+            request.setAttribute("ing3_vol", request.getParameter("ing3_vol"));
+            request.setAttribute("ing4_vol", request.getParameter("ing4_vol"));
+            request.setAttribute("ing5_vol", request.getParameter("ing5_vol"));
+            request.setAttribute("ing6_vol", request.getParameter("ing6_vol"));
+            request.setAttribute("ing7_vol", request.getParameter("ing7_vol"));
+            request.setAttribute("ing8_vol", request.getParameter("ing8_vol"));
+            request.setAttribute("ing9_vol", request.getParameter("ing9_vol"));
+            request.setAttribute("ing10_vol", request.getParameter("ing10_vol"));
+            request.setAttribute("ing1_type", request.getParameter("ing1_type"));
+            request.setAttribute("ing2_type", request.getParameter("ing2_type"));
+            request.setAttribute("ing3_type", request.getParameter("ing3_type"));
+            request.setAttribute("ing4_type", request.getParameter("ing4_type"));
+            request.setAttribute("ing5_type", request.getParameter("ing5_type"));
+            request.setAttribute("ing6_type", request.getParameter("ing6_type"));
+            request.setAttribute("ing7_type", request.getParameter("ing7_type"));
+            request.setAttribute("ing8_type", request.getParameter("ing8_type"));
+            request.setAttribute("ing9_type", request.getParameter("ing9_type"));
+            request.setAttribute("ing10_type", request.getParameter("ing10_type"));
 
-        if(request.getParameter("remove_flag") != null && !request.getParameter("remove_flag").equals("")) {
-            if(request.getSession().getAttribute("ing10") != null) {
-                request.getSession().removeAttribute("ing10");
-                request.removeAttribute("ing10_vol");
+            if(request.getParameter("remove_flag") != null && !request.getParameter("remove_flag").equals("")) {
+                if(request.getSession().getAttribute("ing10") != null) {
+                    request.getSession().removeAttribute("ing10");
+                    request.removeAttribute("ing10_vol");
+                    request.removeAttribute("ing10_type");
+                }
+                else if(request.getSession().getAttribute("ing9") != null) {
+                    request.getSession().removeAttribute("ing9");
+                    request.removeAttribute("ing9_vol");
+                    request.removeAttribute("ing9_type");
+                }
+                else if(request.getSession().getAttribute("ing8") != null) {
+                    request.getSession().removeAttribute("ing8");
+                    request.removeAttribute("ing8_vol");
+                    request.removeAttribute("ing8_type");
+                }
+                else if(request.getSession().getAttribute("ing7") != null) {
+                    request.getSession().removeAttribute("ing7");
+                    request.removeAttribute("ing7_vol");
+                    request.removeAttribute("ing7_type");
+                }
+                else if(request.getSession().getAttribute("ing6") != null) {
+                    request.getSession().removeAttribute("ing6");
+                    request.removeAttribute("ing6_vol");
+                    request.removeAttribute("ing6_type");
+                }
+                else if(request.getSession().getAttribute("ing5") != null) {
+                    request.getSession().removeAttribute("ing5");
+                    request.removeAttribute("ing5_vol");
+                    request.removeAttribute("ing5_type");
+                }
+                else if(request.getSession().getAttribute("ing4") != null) {
+                    request.getSession().removeAttribute("ing4");
+                    request.removeAttribute("ing4_vol");
+                    request.removeAttribute("ing4_type");
+                }
+                else if(request.getSession().getAttribute("ing3") != null) {
+                    request.getSession().removeAttribute("ing3");
+                    request.removeAttribute("ing3_vol");
+                    request.removeAttribute("ing3_type");
+                }
             }
-            else if(request.getSession().getAttribute("ing9") != null) {
-                request.getSession().removeAttribute("ing9");
-                request.removeAttribute("ing9_vol");
-            }
-            else if(request.getSession().getAttribute("ing8") != null) {
-                request.getSession().removeAttribute("ing8");
-                request.removeAttribute("ing8_vol");
-            }
-            else if(request.getSession().getAttribute("ing7") != null) {
-                request.getSession().removeAttribute("ing7");
-                request.removeAttribute("ing7_vol");
-            }
-            else if(request.getSession().getAttribute("ing6") != null) {
-                request.getSession().removeAttribute("ing6");
-                request.removeAttribute("ing6_vol");
-            }
-            else if(request.getSession().getAttribute("ing5") != null) {
-                request.getSession().removeAttribute("ing5");
-                request.removeAttribute("ing5_vol");
-            }
-            else if(request.getSession().getAttribute("ing4") != null) {
-                request.getSession().removeAttribute("ing4");
-                request.removeAttribute("ing4_vol");
-            }
-            else if(request.getSession().getAttribute("ing3") != null) {
-                request.getSession().removeAttribute("ing3");
-                request.removeAttribute("ing3_vol");
-            }
-        }
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/new.jsp");
-        rd.forward(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/new.jsp");
+            rd.forward(request, response);
         }
     }
 

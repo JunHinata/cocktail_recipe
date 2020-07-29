@@ -46,8 +46,13 @@
                                 <tr>
                                     <c:if test="${recipe.id == ingredient.makeRecipe.id}">
                                         <th><c:out value="${ingredient.useIngredient.name}" /></th>
-                                        <td><c:out value="${ingredient.vol}" /> ml</td>
-                                        <br>
+                                        <td>
+                                            <c:if test="${ingredient.type == 'ml'}"><c:out value="${ingredient.vol}" /> ml</c:if>
+                                            <c:if test="${ingredient.type == 'tsp'}"><c:out value="${ingredient.vol}" /> tsp</c:if>
+                                            <c:if test="${ingredient.type == 'dash'}"><c:out value="${ingredient.vol}" /> dash</c:if>
+                                            <c:if test="${ingredient.type == '個'}"><c:out value="${ingredient.vol}" /> 個</c:if>
+                                            <c:if test="${ingredient.type == '適量'}"> 適量</c:if>
+                                        </td>
                                     </c:if>
                                 </tr>
                             </c:forEach>

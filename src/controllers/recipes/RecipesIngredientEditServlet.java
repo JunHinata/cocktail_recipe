@@ -81,6 +81,16 @@ public class RecipesIngredientEditServlet extends HttpServlet {
             request.setAttribute("ing8_vol", request.getParameter("ing8_vol"));
             request.setAttribute("ing9_vol", request.getParameter("ing9_vol"));
             request.setAttribute("ing10_vol", request.getParameter("ing10_vol"));
+            request.setAttribute("ing1_type", request.getParameter("ing1_type"));
+            request.setAttribute("ing2_type", request.getParameter("ing2_type"));
+            request.setAttribute("ing3_type", request.getParameter("ing3_type"));
+            request.setAttribute("ing4_type", request.getParameter("ing4_type"));
+            request.setAttribute("ing5_type", request.getParameter("ing5_type"));
+            request.setAttribute("ing6_type", request.getParameter("ing6_type"));
+            request.setAttribute("ing7_type", request.getParameter("ing7_type"));
+            request.setAttribute("ing8_type", request.getParameter("ing8_type"));
+            request.setAttribute("ing9_type", request.getParameter("ing9_type"));
+            request.setAttribute("ing10_type", request.getParameter("ing10_type"));
 
             RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/ingredient_edit.jsp");
             rd.forward(request, response);

@@ -67,6 +67,16 @@
             <input type="hidden" name="ing8_vol" value="${ing8_vol}" />
             <input type="hidden" name="ing9_vol" value="${ing9_vol}" />
             <input type="hidden" name="ing10_vol" value="${ing10_vol}" />
+            <input type="hidden" name="ing1_type" value="${ing1_type}" />
+            <input type="hidden" name="ing2_type" value="${ing2_type}" />
+            <input type="hidden" name="ing3_type" value="${ing3_type}" />
+            <input type="hidden" name="ing4_type" value="${ing4_type}" />
+            <input type="hidden" name="ing5_type" value="${ing5_type}" />
+            <input type="hidden" name="ing6_type" value="${ing6_type}" />
+            <input type="hidden" name="ing7_type" value="${ing7_type}" />
+            <input type="hidden" name="ing8_type" value="${ing8_type}" />
+            <input type="hidden" name="ing9_type" value="${ing9_type}" />
+            <input type="hidden" name="ing10_type" value="${ing10_type}" />
         </form>
 
         <div class="pagination">

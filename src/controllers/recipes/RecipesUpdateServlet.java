@@ -90,70 +90,110 @@ public class RecipesUpdateServlet extends HttpServlet {
             String ing9_vol = request.getParameter("ing9_vol");
             String ing10_vol = request.getParameter("ing10_vol");
 
+            String ing1_type = request.getParameter("ing1_type");
+            String ing2_type = request.getParameter("ing2_type");
+            String ing3_type = request.getParameter("ing3_type");
+            String ing4_type = request.getParameter("ing4_type");
+            String ing5_type = request.getParameter("ing5_type");
+            String ing6_type = request.getParameter("ing6_type");
+            String ing7_type = request.getParameter("ing7_type");
+            String ing8_type = request.getParameter("ing8_type");
+            String ing9_type = request.getParameter("ing9_type");
+            String ing10_type = request.getParameter("ing10_type");
 
             RecipeIngredient ri1 = new RecipeIngredient();
-            if(ing1 != null && !ing1_vol.isEmpty()) {
+            if(ing1 != null && !ing1_type.isEmpty() && (!ing1_vol.isEmpty() || ing1_type.equals("適量"))) {
                 ri1.setUseIngredient(ing1);
                 ri1.setMakeRecipe(r);
-                ri1.setVol(Integer.parseInt(ing1_vol));
+                ri1.setType(ing1_type);
+                if(!ing1_type.equals("適量")) {
+                    ri1.setVol(Integer.parseInt(ing1_vol));
+                }
             }
             RecipeIngredient ri2 = new RecipeIngredient();
-            if(ing2 != null && !ing2_vol.isEmpty()) {
+            if(ing2 != null && !ing2_type.isEmpty() && (!ing2_vol.isEmpty() || ing2_type.equals("適量"))) {
                 ri2.setUseIngredient(ing2);
                 ri2.setMakeRecipe(r);
-                ri2.setVol(Integer.parseInt(ing2_vol));
+                ri2.setType(ing2_type);
+                if(!ing2_type.equals("適量")) {
+                    ri2.setVol(Integer.parseInt(ing2_vol));
+                }
             }
             RecipeIngredient ri3 = new RecipeIngredient();
-            if(ing3 != null && !ing3_vol.isEmpty()) {
+            if(ing3 != null && !ing3_type.isEmpty() && (!ing3_vol.isEmpty() || ing3_type.equals("適量"))) {
                 ri3.setUseIngredient(ing3);
                 ri3.setMakeRecipe(r);
-                ri3.setVol(Integer.parseInt(ing3_vol));
+                ri3.setType(ing3_type);
+                if(!ing3_type.equals("適量")) {
+                    ri3.setVol(Integer.parseInt(ing3_vol));
+                }
             }
             RecipeIngredient ri4 = new RecipeIngredient();
-            if(ing4 != null && !ing4_vol.isEmpty()) {
+            if(ing4 != null && !ing4_type.isEmpty() && (!ing4_vol.isEmpty() || ing4_type.equals("適量"))) {
                 ri4.setUseIngredient(ing4);
                 ri4.setMakeRecipe(r);
-                ri4.setVol(Integer.parseInt(ing4_vol));
+                ri4.setType(ing4_type);
+                if(!ing4_type.equals("適量")) {
+                    ri4.setVol(Integer.parseInt(ing4_vol));
+                }
             }
             RecipeIngredient ri5 = new RecipeIngredient();
-            if(ing5 != null && !ing5_vol.isEmpty()) {
+            if(ing5 != null && !ing5_type.isEmpty() && (!ing5_vol.isEmpty() || ing5_type.equals("適量"))) {
                 ri5.setUseIngredient(ing5);
                 ri5.setMakeRecipe(r);
-                ri5.setVol(Integer.parseInt(ing5_vol));
+                ri5.setType(ing5_type);
+                if(!ing5_type.equals("適量")) {
+                    ri5.setVol(Integer.parseInt(ing5_vol));
+                }
             }
             RecipeIngredient ri6 = new RecipeIngredient();
-            if(ing6 != null && !ing6_vol.isEmpty()) {
+            if(ing6 != null && !ing6_type.isEmpty() && (!ing6_vol.isEmpty() || ing6_type.equals("適量"))) {
                 ri6.setUseIngredient(ing6);
                 ri6.setMakeRecipe(r);
-                ri6.setVol(Integer.parseInt(ing6_vol));
+                ri6.setType(ing6_type);
+                if(!ing6_type.equals("適量")) {
+                    ri6.setVol(Integer.parseInt(ing6_vol));
+                }
             }
             RecipeIngredient ri7 = new RecipeIngredient();
-            if(ing7 != null && !ing7_vol.isEmpty()) {
+            if(ing7 != null && !ing7_type.isEmpty() && (!ing7_vol.isEmpty() || ing7_type.equals("適量"))) {
                 ri7.setUseIngredient(ing7);
                 ri7.setMakeRecipe(r);
-                ri7.setVol(Integer.parseInt(ing7_vol));
+                ri7.setType(ing7_type);
+                if(!ing7_type.equals("適量")) {
+                    ri7.setVol(Integer.parseInt(ing7_vol));
+                }
             }
             RecipeIngredient ri8 = new RecipeIngredient();
-            if(ing8 != null && !ing8_vol.isEmpty()) {
+            if(ing8 != null && !ing8_type.isEmpty() && (!ing8_vol.isEmpty() || ing8_type.equals("適量"))) {
                 ri8.setUseIngredient(ing8);
                 ri8.setMakeRecipe(r);
-                ri8.setVol(Integer.parseInt(ing8_vol));
+                ri8.setType(ing8_type);
+                if(!ing8_type.equals("適量")) {
+                    ri8.setVol(Integer.parseInt(ing8_vol));
+                }
             }
             RecipeIngredient ri9 = new RecipeIngredient();
-            if(ing9 != null && !ing9_vol.isEmpty()) {
+            if(ing9 != null && !ing9_type.isEmpty() && (!ing9_vol.isEmpty() || ing9_type.equals("適量"))) {
                 ri9.setUseIngredient(ing9);
                 ri9.setMakeRecipe(r);
-                ri9.setVol(Integer.parseInt(ing9_vol));
+                ri9.setType(ing9_type);
+                if(!ing9_type.equals("適量")) {
+                    ri9.setVol(Integer.parseInt(ing9_vol));
+                }
             }
             RecipeIngredient ri10 = new RecipeIngredient();
-            if(ing10 != null && !ing10_vol.isEmpty()) {
+            if(ing10 != null && !ing10_type.isEmpty() && (!ing10_vol.isEmpty() || ing10_type.equals("適量"))) {
                 ri10.setUseIngredient(ing10);
                 ri10.setMakeRecipe(r);
-                ri10.setVol(Integer.parseInt(ing10_vol));
+                ri10.setType(ing10_type);
+                if(!ing10_type.equals("適量")) {
+                    ri10.setVol(Integer.parseInt(ing10_vol));
+                }
             }
 
             //RecipeIngredientのエラーチェック
-            List<String> errors_ri = RecipeIngredientValidator.validate(ing1, ing1_vol, ing2, ing2_vol, ing3, ing3_vol, ing4, ing4_vol, ing5, ing5_vol, ing6, ing6_vol, ing7, ing7_vol, ing8, ing8_vol, ing9, ing9_vol, ing10, ing10_vol);
+            List<String> errors_ri = RecipeIngredientValidator.validate(ing1, ing1_vol, ing1_type, ing2, ing2_vol, ing2_type, ing3, ing3_vol, ing3_type, ing4, ing4_vol, ing4_type, ing5, ing5_vol, ing5_type, ing6, ing6_vol, ing6_type, ing7, ing7_vol, ing7_type, ing8, ing8_vol, ing8_type, ing9, ing9_vol, ing9_type, ing10, ing10_vol, ing10_type);
             errors.addAll(errors_ri);
 
             if(errors.size() > 0) {
@@ -172,6 +212,16 @@ public class RecipesUpdateServlet extends HttpServlet {
                 request.setAttribute("ing8_vol", ing8_vol);
                 request.setAttribute("ing9_vol", ing9_vol);
                 request.setAttribute("ing10_vol", ing10_vol);
+                request.setAttribute("ing1_type", ing1_type);
+                request.setAttribute("ing2_type", ing2_type);
+                request.setAttribute("ing3_type", ing3_type);
+                request.setAttribute("ing4_type", ing4_type);
+                request.setAttribute("ing5_type", ing5_type);
+                request.setAttribute("ing6_type", ing6_type);
+                request.setAttribute("ing7_type", ing7_type);
+                request.setAttribute("ing8_type", ing8_type);
+                request.setAttribute("ing9_type", ing9_type);
+                request.setAttribute("ing10_type", ing10_type);
 
                 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/edit.jsp");
                 rd.forward(request, response);

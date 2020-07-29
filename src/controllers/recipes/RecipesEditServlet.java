@@ -45,43 +45,73 @@ public class RecipesEditServlet extends HttpServlet {
 
         if(ingredients.size() >= 1) {
             request.getSession().setAttribute("ing1", ingredients.get(0).getUseIngredient());
-            request.setAttribute("ing1_vol",ingredients.get(0).getVol());
+            if(!ingredients.get(0).getType().equals("適量")) {
+                request.setAttribute("ing1_vol",ingredients.get(0).getVol());
+            }
+            request.setAttribute("ing1_type", ingredients.get(0).getType());
         }
         if(ingredients.size() >= 2) {
             request.getSession().setAttribute("ing2", ingredients.get(1).getUseIngredient());
-            request.setAttribute("ing2_vol",ingredients.get(1).getVol());
+            if(!ingredients.get(1).getType().equals("適量")) {
+                request.setAttribute("ing2_vol",ingredients.get(1).getVol());
+            }
+            request.setAttribute("ing2_type", ingredients.get(1).getType());
         }
         if(ingredients.size() >= 3) {
             request.getSession().setAttribute("ing3", ingredients.get(2).getUseIngredient());
-            request.setAttribute("ing3_vol",ingredients.get(2).getVol());
+            if(!ingredients.get(2).getType().equals("適量")) {
+                request.setAttribute("ing3_vol",ingredients.get(2).getVol());
+            }
+            request.setAttribute("ing3_type", ingredients.get(2).getType());
         }
         if(ingredients.size() >= 4) {
             request.getSession().setAttribute("ing4", ingredients.get(3).getUseIngredient());
-            request.setAttribute("ing4_vol",ingredients.get(3).getVol());
+            if(!ingredients.get(3).getType().equals("適量")) {
+                request.setAttribute("ing4_vol",ingredients.get(3).getVol());
+            }
+            request.setAttribute("ing4_type", ingredients.get(3).getType());
         }
         if(ingredients.size() >= 5) {
             request.getSession().setAttribute("ing5", ingredients.get(4).getUseIngredient());
-            request.setAttribute("ing5_vol",ingredients.get(4).getVol());
+            if(!ingredients.get(4).getType().equals("適量")) {
+                request.setAttribute("ing5_vol",ingredients.get(4).getVol());
+            }
+            request.setAttribute("ing5_type", ingredients.get(4).getType());
         }
         if(ingredients.size() >= 6) {
             request.getSession().setAttribute("ing6", ingredients.get(5).getUseIngredient());
-            request.setAttribute("ing6_vol",ingredients.get(5).getVol());
+            if(!ingredients.get(5).getType().equals("適量")) {
+                request.setAttribute("ing6_vol",ingredients.get(5).getVol());
+            }
+            request.setAttribute("ing6_type", ingredients.get(5).getType());
         }
         if(ingredients.size() >= 7) {
             request.getSession().setAttribute("ing7", ingredients.get(6).getUseIngredient());
-            request.setAttribute("ing7_vol",ingredients.get(6).getVol());
+            if(!ingredients.get(6).getType().equals("適量")) {
+                request.setAttribute("ing7_vol",ingredients.get(6).getVol());
+            }
+            request.setAttribute("ing7_type", ingredients.get(6).getType());
         }
         if(ingredients.size() >= 8) {
             request.getSession().setAttribute("ing8", ingredients.get(7).getUseIngredient());
-            request.setAttribute("ing8_vol",ingredients.get(7).getVol());
+            if(!ingredients.get(7).getType().equals("適量")) {
+                request.setAttribute("ing8_vol",ingredients.get(7).getVol());
+            }
+            request.setAttribute("ing8_type", ingredients.get(7).getType());
         }
         if(ingredients.size() >= 9) {
             request.getSession().setAttribute("ing9", ingredients.get(8).getUseIngredient());
-            request.setAttribute("ing9_vol",ingredients.get(8).getVol());
+            if(!ingredients.get(8).getType().equals("適量")) {
+                request.setAttribute("ing9_vol",ingredients.get(8).getVol());
+            }
+            request.setAttribute("ing9_type", ingredients.get(8).getType());
         }
         if(ingredients.size() == 10) {
             request.getSession().setAttribute("ing10", ingredients.get(9).getUseIngredient());
-            request.setAttribute("ing10_vol",ingredients.get(9).getVol());
+            if(!ingredients.get(9).getType().equals("適量")) {
+                request.setAttribute("ing10_vol",ingredients.get(9).getVol());
+            }
+            request.setAttribute("ing10_type", ingredients.get(9).getType());
         }
 
         em.close();
@@ -198,39 +228,57 @@ public class RecipesEditServlet extends HttpServlet {
         request.setAttribute("ing8_vol", request.getParameter("ing8_vol"));
         request.setAttribute("ing9_vol", request.getParameter("ing9_vol"));
         request.setAttribute("ing10_vol", request.getParameter("ing10_vol"));
+        request.setAttribute("ing1_type", request.getParameter("ing1_type"));
+        request.setAttribute("ing2_type", request.getParameter("ing2_type"));
+        request.setAttribute("ing3_type", request.getParameter("ing3_type"));
+        request.setAttribute("ing4_type", request.getParameter("ing4_type"));
+        request.setAttribute("ing5_type", request.getParameter("ing5_type"));
+        request.setAttribute("ing6_type", request.getParameter("ing6_type"));
+        request.setAttribute("ing7_type", request.getParameter("ing7_type"));
+        request.setAttribute("ing8_type", request.getParameter("ing8_type"));
+        request.setAttribute("ing9_type", request.getParameter("ing9_type"));
+        request.setAttribute("ing10_type", request.getParameter("ing10_type"));
 
         if(request.getParameter("remove_flag") != null && !request.getParameter("remove_flag").equals("")) {
             if(request.getSession().getAttribute("ing10") != null) {
                 request.getSession().removeAttribute("ing10");
                 request.removeAttribute("ing10_vol");
+                request.removeAttribute("ing10_type");
             }
             else if(request.getSession().getAttribute("ing9") != null) {
                 request.getSession().removeAttribute("ing9");
                 request.removeAttribute("ing9_vol");
+                request.removeAttribute("ing9_type");
             }
             else if(request.getSession().getAttribute("ing8") != null) {
                 request.getSession().removeAttribute("ing8");
                 request.removeAttribute("ing8_vol");
+                request.removeAttribute("ing8_type");
             }
             else if(request.getSession().getAttribute("ing7") != null) {
                 request.getSession().removeAttribute("ing7");
                 request.removeAttribute("ing7_vol");
+                request.removeAttribute("ing7_type");
             }
             else if(request.getSession().getAttribute("ing6") != null) {
                 request.getSession().removeAttribute("ing6");
                 request.removeAttribute("ing6_vol");
+                request.removeAttribute("ing6_type");
             }
             else if(request.getSession().getAttribute("ing5") != null) {
                 request.getSession().removeAttribute("ing5");
                 request.removeAttribute("ing5_vol");
+                request.removeAttribute("ing5_type");
             }
             else if(request.getSession().getAttribute("ing4") != null) {
                 request.getSession().removeAttribute("ing4");
                 request.removeAttribute("ing4_vol");
+                request.removeAttribute("ing4_type");
             }
             else if(request.getSession().getAttribute("ing3") != null) {
                 request.getSession().removeAttribute("ing3");
                 request.removeAttribute("ing3_vol");
+                request.removeAttribute("ing3_type");
             }
         }
 
