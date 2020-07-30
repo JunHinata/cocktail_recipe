@@ -75,8 +75,10 @@
                     投稿者：<c:out value="${recipe.createUser.name}" />
                 </div>
                 <a href="<c:url value='/recipes/index' />">レシピ検索に戻る</a>
-                <a href="<c:url value='/recipes/edit?id=${recipe.id}' />">このレシピを編集</a>
-                <form method="POST" action="<c:url value='/recipes/make' />">
+                <c:if test="${login_user.id == recipe.createUser.id}">
+                    <a href="<c:url value='/recipes/edit?id=${recipe.id}' />">このレシピを編集</a>
+                </c:if>
+                <form method="POST" action="<c:url value='/recipes/consume' />">
                     <input type="hidden" name="_token" value="${_token}">
                     <input type="hidden" name="recipe_id" value="${recipe.id}">
                     <button type="submit">このレシピを作成する</button>

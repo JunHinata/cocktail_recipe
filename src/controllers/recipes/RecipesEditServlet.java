@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import models.Ingredient;
 import models.Recipe;
 import models.RecipeIngredient;
+import models.User;
 import utils.DBUtil;
 
 /**
@@ -37,91 +38,94 @@ public class RecipesEditServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
+        User login_user = (User)request.getSession().getAttribute("login_user");
         Recipe r = em.find(Recipe.class, Integer.parseInt(request.getParameter("id")));
 
-        List<RecipeIngredient> ingredients = em.createNamedQuery("getIngredients", RecipeIngredient.class)
-                                               .setParameter("makeRecipe", r)
-                                               .getResultList();
+        if(r.getCreateUser().getId() == login_user.getId()) {
+            List<RecipeIngredient> ingredients = em.createNamedQuery("getIngredients", RecipeIngredient.class)
+                                                   .setParameter("makeRecipe", r)
+                                                   .getResultList();
 
-        if(ingredients.size() >= 1) {
-            request.getSession().setAttribute("ing1", ingredients.get(0).getUseIngredient());
-            if(!ingredients.get(0).getType().equals("適量")) {
-                request.setAttribute("ing1_vol",ingredients.get(0).getVol());
+            if(ingredients.size() >= 1) {
+                request.getSession().setAttribute("ing1", ingredients.get(0).getUseIngredient());
+                if(!ingredients.get(0).getType().equals("適量")) {
+                    request.setAttribute("ing1_vol",ingredients.get(0).getVol());
+                }
+                request.setAttribute("ing1_type", ingredients.get(0).getType());
             }
-            request.setAttribute("ing1_type", ingredients.get(0).getType());
-        }
-        if(ingredients.size() >= 2) {
-            request.getSession().setAttribute("ing2", ingredients.get(1).getUseIngredient());
-            if(!ingredients.get(1).getType().equals("適量")) {
-                request.setAttribute("ing2_vol",ingredients.get(1).getVol());
+            if(ingredients.size() >= 2) {
+                request.getSession().setAttribute("ing2", ingredients.get(1).getUseIngredient());
+                if(!ingredients.get(1).getType().equals("適量")) {
+                    request.setAttribute("ing2_vol",ingredients.get(1).getVol());
+                }
+                request.setAttribute("ing2_type", ingredients.get(1).getType());
             }
-            request.setAttribute("ing2_type", ingredients.get(1).getType());
-        }
-        if(ingredients.size() >= 3) {
-            request.getSession().setAttribute("ing3", ingredients.get(2).getUseIngredient());
-            if(!ingredients.get(2).getType().equals("適量")) {
-                request.setAttribute("ing3_vol",ingredients.get(2).getVol());
+            if(ingredients.size() >= 3) {
+                request.getSession().setAttribute("ing3", ingredients.get(2).getUseIngredient());
+                if(!ingredients.get(2).getType().equals("適量")) {
+                    request.setAttribute("ing3_vol",ingredients.get(2).getVol());
+                }
+                request.setAttribute("ing3_type", ingredients.get(2).getType());
             }
-            request.setAttribute("ing3_type", ingredients.get(2).getType());
-        }
-        if(ingredients.size() >= 4) {
-            request.getSession().setAttribute("ing4", ingredients.get(3).getUseIngredient());
-            if(!ingredients.get(3).getType().equals("適量")) {
-                request.setAttribute("ing4_vol",ingredients.get(3).getVol());
+            if(ingredients.size() >= 4) {
+                request.getSession().setAttribute("ing4", ingredients.get(3).getUseIngredient());
+                if(!ingredients.get(3).getType().equals("適量")) {
+                    request.setAttribute("ing4_vol",ingredients.get(3).getVol());
+                }
+                request.setAttribute("ing4_type", ingredients.get(3).getType());
             }
-            request.setAttribute("ing4_type", ingredients.get(3).getType());
-        }
-        if(ingredients.size() >= 5) {
-            request.getSession().setAttribute("ing5", ingredients.get(4).getUseIngredient());
-            if(!ingredients.get(4).getType().equals("適量")) {
-                request.setAttribute("ing5_vol",ingredients.get(4).getVol());
+            if(ingredients.size() >= 5) {
+                request.getSession().setAttribute("ing5", ingredients.get(4).getUseIngredient());
+                if(!ingredients.get(4).getType().equals("適量")) {
+                    request.setAttribute("ing5_vol",ingredients.get(4).getVol());
+                }
+                request.setAttribute("ing5_type", ingredients.get(4).getType());
             }
-            request.setAttribute("ing5_type", ingredients.get(4).getType());
-        }
-        if(ingredients.size() >= 6) {
-            request.getSession().setAttribute("ing6", ingredients.get(5).getUseIngredient());
-            if(!ingredients.get(5).getType().equals("適量")) {
-                request.setAttribute("ing6_vol",ingredients.get(5).getVol());
+            if(ingredients.size() >= 6) {
+                request.getSession().setAttribute("ing6", ingredients.get(5).getUseIngredient());
+                if(!ingredients.get(5).getType().equals("適量")) {
+                    request.setAttribute("ing6_vol",ingredients.get(5).getVol());
+                }
+                request.setAttribute("ing6_type", ingredients.get(5).getType());
             }
-            request.setAttribute("ing6_type", ingredients.get(5).getType());
-        }
-        if(ingredients.size() >= 7) {
-            request.getSession().setAttribute("ing7", ingredients.get(6).getUseIngredient());
-            if(!ingredients.get(6).getType().equals("適量")) {
-                request.setAttribute("ing7_vol",ingredients.get(6).getVol());
+            if(ingredients.size() >= 7) {
+                request.getSession().setAttribute("ing7", ingredients.get(6).getUseIngredient());
+                if(!ingredients.get(6).getType().equals("適量")) {
+                    request.setAttribute("ing7_vol",ingredients.get(6).getVol());
+                }
+                request.setAttribute("ing7_type", ingredients.get(6).getType());
             }
-            request.setAttribute("ing7_type", ingredients.get(6).getType());
-        }
-        if(ingredients.size() >= 8) {
-            request.getSession().setAttribute("ing8", ingredients.get(7).getUseIngredient());
-            if(!ingredients.get(7).getType().equals("適量")) {
-                request.setAttribute("ing8_vol",ingredients.get(7).getVol());
+            if(ingredients.size() >= 8) {
+                request.getSession().setAttribute("ing8", ingredients.get(7).getUseIngredient());
+                if(!ingredients.get(7).getType().equals("適量")) {
+                    request.setAttribute("ing8_vol",ingredients.get(7).getVol());
+                }
+                request.setAttribute("ing8_type", ingredients.get(7).getType());
             }
-            request.setAttribute("ing8_type", ingredients.get(7).getType());
-        }
-        if(ingredients.size() >= 9) {
-            request.getSession().setAttribute("ing9", ingredients.get(8).getUseIngredient());
-            if(!ingredients.get(8).getType().equals("適量")) {
-                request.setAttribute("ing9_vol",ingredients.get(8).getVol());
+            if(ingredients.size() >= 9) {
+                request.getSession().setAttribute("ing9", ingredients.get(8).getUseIngredient());
+                if(!ingredients.get(8).getType().equals("適量")) {
+                    request.setAttribute("ing9_vol",ingredients.get(8).getVol());
+                }
+                request.setAttribute("ing9_type", ingredients.get(8).getType());
             }
-            request.setAttribute("ing9_type", ingredients.get(8).getType());
-        }
-        if(ingredients.size() == 10) {
-            request.getSession().setAttribute("ing10", ingredients.get(9).getUseIngredient());
-            if(!ingredients.get(9).getType().equals("適量")) {
-                request.setAttribute("ing10_vol",ingredients.get(9).getVol());
+            if(ingredients.size() == 10) {
+                request.getSession().setAttribute("ing10", ingredients.get(9).getUseIngredient());
+                if(!ingredients.get(9).getType().equals("適量")) {
+                    request.setAttribute("ing10_vol",ingredients.get(9).getVol());
+                }
+                request.setAttribute("ing10_type", ingredients.get(9).getType());
             }
-            request.setAttribute("ing10_type", ingredients.get(9).getType());
-        }
 
-        em.close();
+            em.close();
 
-        request.getSession().setAttribute("recipe", r);
-        request.setAttribute("_token", request.getSession().getId());
-        request.getSession().setAttribute("recipe_id", r.getId());
+            request.getSession().setAttribute("recipe", r);
+            request.setAttribute("_token", request.getSession().getId());
+            request.getSession().setAttribute("recipe_id", r.getId());
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/edit.jsp");
-        rd.forward(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/edit.jsp");
+            rd.forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
