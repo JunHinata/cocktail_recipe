@@ -73,6 +73,10 @@ public class RecipesShowServlet extends HttpServlet {
         request.setAttribute("ingredients", ingredients);
         request.setAttribute("_token", request.getSession().getId());
         request.getSession().setAttribute("recipe_id", r.getId());
+        if(request.getSession().getAttribute("consumptions") != null) {
+            request.setAttribute("consumptions", request.getSession().getAttribute("consumptions"));
+            request.getSession().removeAttribute("consumptions");
+        }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/recipes/show.jsp");
         rd.forward(request, response);

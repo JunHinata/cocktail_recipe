@@ -3,6 +3,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
+        <c:if test="${consumptions != null}">
+            <div id="flush_success">
+                カクテルに使用した以下の材料について在庫数量を調整しました。<br>
+                <c:forEach var="consumption" items="${consumptions}">
+                    ・<c:out value="${consumption}" /><br>
+                </c:forEach>
+            </div>
+        </c:if>
         <c:choose>
             <c:when test="${recipe != null}">
                 <img class="icon" src="/cocktail_recipe/images/myrecipe_w.png" alt="マイレシピアイコン" />
