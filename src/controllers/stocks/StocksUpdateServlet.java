@@ -41,9 +41,19 @@ public class StocksUpdateServlet extends HttpServlet {
 
             Stock s = em.find(Stock.class, (Integer)(request.getSession().getAttribute("stock_id")));
 
-            s.setVol(Integer.parseInt(request.getParameter("vol")));
             s.setComment(request.getParameter("comment"));
             s.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+            System.out.println();
+
+            if(request.getParameter("vol_f") != null && !request.getParameter("vol_f").isEmpty()) {
+                s.setVol(Integer.parseInt(request.getParameter("vol_f")));
+            }
+            else if(request.getParameter("vol_o") != null && !request.getParameter("vol_o").isEmpty()) {
+                s.setVol(Integer.parseInt(request.getParameter("vol_o")));
+            }
+            else if(request.getParameter("vol") != null && !request.getParameter("vol").isEmpty()) {
+                s.setVol(Integer.parseInt(request.getParameter("vol")));
+            }
 
             List<String> errors = StockValidator.validate(s);
             if(errors.size() > 0) {

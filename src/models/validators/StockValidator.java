@@ -19,7 +19,7 @@ public class StockValidator {
 
     private static String _validateVol(Integer vol) {
         if(vol == null || vol.equals("")) {
-            return "在庫容量/個数を入力してください。";
+            return "在庫容量を入力してください。";
         }
 
         return "";

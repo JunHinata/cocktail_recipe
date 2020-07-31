@@ -41,9 +41,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>在庫容量/個数</th>
+                            <th>在庫容量/有無</th>
                             <td class="row0">
-                                約 <c:out value="${stock.vol}" /> ml
+                                <c:choose>
+                                    <c:when test="${stock.stockIngredient.type != '副材料'}">
+                                        約 <c:out value="${stock.vol}" /> ml
+                                    </c:when>
+                                    <c:otherwise>
+                                        在庫あり
+                                    </c:otherwise>
+                                </c:choose>
                             </td>
                         </tr>
                         <tr>

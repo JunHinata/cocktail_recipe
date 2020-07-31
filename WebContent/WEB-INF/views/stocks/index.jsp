@@ -27,7 +27,7 @@
                 <tr class="label">
                     <th class="name">材料名</th>
                     <th class="type">分類</th>
-                    <th class="vol">容量/個数</th>
+                    <th class="vol">容量/有無</th>
                     <th class="date">更新日</th>
                     <th class="comment">コメント</th>
                     <th class="action">操作</th>
@@ -36,7 +36,16 @@
                     <tr class="row${status.count % 2}">
                         <td class="name"><c:out value="${stock.stockIngredient.name}" /></td>
                         <td class="type"><c:out value="${stock.stockIngredient.type}" /></td>
-                        <td class="vol">約 <c:out value="${stock.vol}" /> ml</td>
+                        <td class="vol">
+                            <c:choose>
+                                <c:when test="${stock.stockIngredient.type != '副材料'}">
+                                    約 <c:out value="${stock.vol}" /> ml
+                                </c:when>
+                                <c:otherwise>
+                                    在庫あり
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
                         <td class="date"><fmt:formatDate value="${stock.updated_at}" pattern="yyyy/MM/dd"/></td>
                         <td class="comment"><c:out value="${stock.comment}" /></td>
                         <td class="action"><a href="<c:url value='/stocks/show?id=${stock.id}' />">詳細を見る</a></td>

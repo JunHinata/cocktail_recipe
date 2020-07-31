@@ -48,9 +48,64 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>在庫容量/個数</th>
+                        <th>在庫容量/有無</th>
                         <td class="row0">
-                            数量自由入力： <input type="number" min="1" name="vol" value="${stock.vol}" /> ml
+                            <c:choose>
+                                <c:when test="${ingredient.type != '副材料'}">
+                                    <span id="form_type">
+                                        <input type="radio" name="form_type" value="free" onclick="formSwitch()" checked /> 数量自由入力：
+                                        <br>
+                                        <input type="radio" name="form_type" value="option" onclick="formSwitch()" /> 数量選択入力：
+                                        <br>
+                                    </span>
+                                    <span id="free_form">
+                                        <input type="number" min="1" name="vol_f" value="${stock.vol}" /> ml
+                                        <br>
+                                    </span>
+                                    <span id="option_form">
+                                        <input type="radio" name="vol_o" value="200" />  200 ml
+                                        <input type="radio" name="vol_o" value="350" />  350 ml
+                                        <input type="radio" name="vol_o" value="375" />  375 ml
+                                        <br>
+                                        <input type="radio" name="vol_o" value="500" />  500 ml
+                                        <input type="radio" name="vol_o" value="700" />  700 ml
+                                        <input type="radio" name="vol_o" value="720" />  720 ml
+                                        <br>
+                                        <input type="radio" name="vol_o" value="750" />  750 ml
+                                        <input type="radio" name="vol_o" value="1000" /> 1000 ml
+                                        <input type="radio" name="vol_o" value="1800" /> 1800 ml
+                                    </span>
+                                    <script>
+                                        //初期表示では選択入力は非表示
+                                        document.getElementById("option_form").style.display = "none";
+
+                                        function formSwitch() {
+                                            radio = document.getElementsByName("form_type");
+                                            if(radio[0].checked) {
+                                                //自由入力が選択された場合
+                                                document.getElementById("free_form").style.display = "";
+                                                document.getElementById("option_form").style.display = "none";
+                                                var inputItem = document.getElementById("option_form").getElementsByTagName("input");
+                                                for(var i = 0; i < inputItem.length; i++) {
+                                                    inputItem[i].checked = "";
+                                                }
+                                            }
+                                            else if(radio[1].checked) {
+                                                //選択入力が選択された場合
+                                                document.getElementById("free_form").style.display = "none";
+                                                var inputItem = document.getElementById("free_form").getElementsByTagName("input");
+                                                for(var i = 0; i < inputItem.length; i++) {
+                                                    inputItem[i].value = "";
+                                                }
+                                                document.getElementById("option_form").style.display = "";
+                                            }
+                                        }
+                                    </script>
+                                </c:when>
+                                <c:otherwise>
+                                    在庫あり<input type="hidden" name="vol" value="1" />
+                                </c:otherwise>
+                            </c:choose>
                         </td>
                     </tr>
                     <tr>

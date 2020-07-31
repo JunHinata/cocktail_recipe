@@ -74,7 +74,7 @@ public class RecipesConsumeServlet extends HttpServlet {
                             if(s.getVol() > consumed_vol) {
                                 s.setVol(s.getVol() - consumed_vol);
                                 em.persist(s);
-                                consumptions.add(s.getStockIngredient().getName() + "を" + consumed_vol + "ml消費しました。");
+                                consumptions.add(s.getStockIngredient().getName() + "を" + consumed_vol + "ml消費しました。在庫数量は残り約" + s.getVol() + "mlです。");
                             }
                             else if(s.getVol() <= consumed_vol) {
                                 em.remove(s);

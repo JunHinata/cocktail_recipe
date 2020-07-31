@@ -48,8 +48,17 @@ public class StocksCreateServlet extends HttpServlet {
 
             s.setStockUser(login_user);
             s.setStockIngredient(stock_ingredient);
-            s.setVol(Integer.parseInt(request.getParameter("vol")));
             s.setComment(request.getParameter("comment"));
+
+            if(request.getParameter("vol_f") != null && !request.getParameter("vol_f").isEmpty()) {
+                s.setVol(Integer.parseInt(request.getParameter("vol_f")));
+            }
+            else if(request.getParameter("vol_o") != null && !request.getParameter("vol_o").isEmpty()) {
+                s.setVol(Integer.parseInt(request.getParameter("vol_o")));
+            }
+            else if(request.getParameter("vol") != null && !request.getParameter("vol").isEmpty()) {
+                s.setVol(Integer.parseInt(request.getParameter("vol")));
+            }
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             s.setCreated_at(currentTime);
