@@ -105,8 +105,8 @@
                     </c:choose>
                 </button>
                 <c:if test="${ing1.name != null}">
-                    <input type="number" min="0" max="500" name="ing1_vol" value="${ing1_vol}" />
-                    <select name="ing1_type">
+                    <input id="number1" type="number" min="0" max="500" name="ing1_vol" value="${ing1_vol}" />
+                    <select id="type1" name="ing1_type" onchange="formSwitch1()">
                         <option value="ml"<c:if test="${ing1_type == 'ml'}">selected</c:if>>ml</option>
                         <option value="tsp"<c:if test="${ing1_type == 'tsp'}">selected</c:if>>tsp</option>
                         <option value="dash"<c:if test="${ing1_type == 'dash'}">selected</c:if>>dash</option>
@@ -128,8 +128,8 @@
                     </c:choose>
                 </button>
                 <c:if test="${ing2.name != null}">
-                    <input type="number" min="0" max="500" name="ing2_vol" value="${ing2_vol}" />
-                    <select name="ing2_type">
+                    <input id="number2" type="number" min="0" max="500" name="ing2_vol" value="${ing2_vol}" />
+                    <select id="type2" name="ing2_type" onchange="formSwitch2()">
                         <option value="ml"<c:if test="${ing2_type == 'ml'}">selected</c:if>>ml</option>
                         <option value="tsp"<c:if test="${ing2_type == 'tsp'}">selected</c:if>>tsp</option>
                         <option value="dash"<c:if test="${ing2_type == 'dash'}">selected</c:if>>dash</option>
@@ -152,8 +152,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing3.name != null}">
-                        <input type="number" min="0" max="500" name="ing3_vol" value="${ing3_vol}" />
-                        <select name="ing3_type">
+                        <input id="number3" type="number" min="0" max="500" name="ing3_vol" value="${ing3_vol}" />
+                        <select id="type3" name="ing3_type" onchange="formSwitch3()">
                             <option value="ml"<c:if test="${ing3_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing3_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing3_type == 'dash'}">selected</c:if>>dash</option>
@@ -177,8 +177,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing4.name != null}">
-                        <input type="number" min="0" max="500" name="ing4_vol" value="${ing4_vol}" />
-                        <select name="ing4_type">
+                        <input id="number4" type="number" min="0" max="500" name="ing4_vol" value="${ing4_vol}" />
+                        <select id="type4" name="ing4_type" onchange="formSwitch4()">
                             <option value="ml"<c:if test="${ing4_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing4_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing4_type == 'dash'}">selected</c:if>>dash</option>
@@ -202,8 +202,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing5.name != null}">
-                        <input type="number" min="0" max="500" name="ing5_vol" value="${ing5_vol}" />
-                        <select name="ing5_type">
+                        <input id="number5" type="number" min="0" max="500" name="ing5_vol" value="${ing5_vol}" />
+                        <select id="type5" name="ing5_type" onchange="formSwitch5()">
                             <option value="ml"<c:if test="${ing5_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing5_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing5_type == 'dash'}">selected</c:if>>dash</option>
@@ -227,8 +227,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing6.name != null}">
-                        <input type="number" min="0" max="500" name="ing6_vol" value="${ing6_vol}" />
-                        <select name="ing6_type">
+                        <input id="number6" type="number" min="0" max="500" name="ing6_vol" value="${ing6_vol}" />
+                        <select id="type6" name="ing6_type" onchange="formSwitch6()">
                             <option value="ml"<c:if test="${ing6_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing6_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing6_type == 'dash'}">selected</c:if>>dash</option>
@@ -252,8 +252,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing7.name != null}">
-                        <input type="number" min="0" max="500" name="ing7_vol" value="${ing7_vol}" />
-                        <select name="ing7_type">
+                        <input id="number7" type="number" min="0" max="500" name="ing7_vol" value="${ing7_vol}" />
+                        <select id="type7" name="ing7_type" onchange="formSwitch7()">
                             <option value="ml"<c:if test="${ing7_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing7_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing7_type == 'dash'}">selected</c:if>>dash</option>
@@ -277,8 +277,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing8.name != null}">
-                        <input type="number" min="0" max="500" name="ing8_vol" value="${ing8_vol}" />
-                        <select name="ing8_type">
+                        <input id="number8" type="number" min="0" max="500" name="ing8_vol" value="${ing8_vol}" />
+                        <select id="type8" name="ing8_type" onchange="formSwitch8()">
                             <option value="ml"<c:if test="${ing8_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing8_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing8_type == 'dash'}">selected</c:if>>dash</option>
@@ -302,8 +302,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing9.name != null}">
-                        <input type="number" min="0" max="500" name="ing9_vol" value="${ing9_vol}" />
-                        <select name="ing9_type">
+                        <input id="number9" type="number" min="0" max="500" name="ing9_vol" value="${ing9_vol}" />
+                        <select id="type9" name="ing9_type" onchange="formSwitch9()">
                             <option value="ml"<c:if test="${ing9_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing9_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing9_type == 'dash'}">selected</c:if>>dash</option>
@@ -327,8 +327,8 @@
                         </c:choose>
                     </button>
                     <c:if test="${ing10.name != null}">
-                        <input type="number" min="0" max="500" name="ing10_vol" value="${ing10_vol}" />
-                        <select name="ing10_type">
+                        <input id="number10" type="number" min="0" max="500" name="ing10_vol" value="${ing10_vol}" />
+                        <select id="type10" name="ing10_type" onchange="formSwitch10()">
                             <option value="ml"<c:if test="${ing10_type == 'ml'}">selected</c:if>>ml</option>
                             <option value="tsp"<c:if test="${ing10_type == 'tsp'}">selected</c:if>>tsp</option>
                             <option value="dash"<c:if test="${ing10_type == 'dash'}">selected</c:if>>dash</option>
@@ -378,6 +378,152 @@
         </script>
         <button type="submit" form="edit" formaction="<c:url value='/recipes/update' />">このレシピを更新</button>
 
+        <script>
+            //"適量"が既に選択されている場合は数値入力フォームを非表示
+            if(${ing1_type == "適量"}) {
+                document.getElementById("number1").style.display = "none";
+            }
+            if(${ing2_type == "適量"}) {
+                document.getElementById("number2").style.display = "none";
+            }
+            if(${ing3_type == "適量"}) {
+                document.getElementById("number3").style.display = "none";
+            }
+            if(${ing4_type == "適量"}) {
+                document.getElementById("number4").style.display = "none";
+            }
+            if(${ing5_type == "適量"}) {
+                document.getElementById("number5").style.display = "none";
+            }
+            if(${ing6_type == "適量"}) {
+                document.getElementById("number6").style.display = "none";
+            }
+            if(${ing7_type == "適量"}) {
+                document.getElementById("number7").style.display = "none";
+            }
+            if(${ing8_type == "適量"}) {
+                document.getElementById("number8").style.display = "none";
+            }
+            if(${ing9_type == "適量"}) {
+                document.getElementById("number9").style.display = "none";
+            }
+            if(${ing10_type == "適量"}) {
+                document.getElementById("number10").style.display = "none";
+            }
+
+            function formSwitch1() {
+                if(document.getElementById("type1")) {
+                    select = document.getElementById("type1").value;
+                    if(select == "適量") {
+                        //"適量"が選択された場合数値入力フォームを非表示
+                        document.getElementById("number1").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        //"適量"以外が選択された場合数値入力フォームを表示
+                        document.getElementById("number1").style.display = "";
+                    }
+                }
+            }
+            function formSwitch2() {
+                if(document.getElementById("type2")) {
+                    select = document.getElementById("type2").value;
+                    if(select == "適量") {
+                        document.getElementById("number2").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number2").style.display = "";
+                    }
+                }
+            }
+            function formSwitch3() {
+                if(document.getElementById("type3")) {
+                    select = document.getElementById("type3").value;
+                    if(select == "適量") {
+                        document.getElementById("number3").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number3").style.display = "";
+                    }
+                }
+            }
+            function formSwitch4() {
+                if(document.getElementById("type4")) {
+                    select = document.getElementById("type4").value;
+                    if(select == "適量") {
+                        document.getElementById("number4").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number4").style.display = "";
+                    }
+                }
+            }
+            function formSwitch5() {
+                if(document.getElementById("type5")) {
+                    select = document.getElementById("type5").value;
+                    if(select == "適量") {
+                        document.getElementById("number5").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number5").style.display = "";
+                    }
+                }
+            }
+            function formSwitch6() {
+                if(document.getElementById("type6")) {
+                    select = document.getElementById("type6").value;
+                    if(select == "適量") {
+                        document.getElementById("number6").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number6").style.display = "";
+                    }
+                }
+            }
+            function formSwitch7() {
+                if(document.getElementById("type7")) {
+                    select = document.getElementById("type7").value;
+                    if(select == "適量") {
+                        document.getElementById("number7").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number7").style.display = "";
+                    }
+                }
+            }
+            function formSwitch8() {
+                if(document.getElementById("type8")) {
+                    select = document.getElementById("type8").value;
+                    if(select == "適量") {
+                        document.getElementById("number8").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number8").style.display = "";
+                    }
+                }
+            }
+            function formSwitch9() {
+                if(document.getElementById("type9")) {
+                    select = document.getElementById("type9").value;
+                    if(select == "適量") {
+                        document.getElementById("number9").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number9").style.display = "";
+                    }
+                }
+            }
+            function formSwitch10() {
+                if(document.getElementById("type10")) {
+                    select = document.getElementById("type10").value;
+                    if(select == "適量") {
+                        document.getElementById("number10").style.display = "none";
+                    }
+                    else if(select != "適量") {
+                        document.getElementById("number10").style.display = "";
+                    }
+                }
+            }
+        </script>
 
     </c:param>
 </c:import>
