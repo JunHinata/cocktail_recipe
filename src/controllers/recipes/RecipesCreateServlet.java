@@ -53,7 +53,6 @@ public class RecipesCreateServlet extends HttpServlet {
             r.setGlass(request.getParameter("glass"));
             r.setTechnique(request.getParameter("technique"));
             r.setIntroduction(request.getParameter("introduction"));
-            r.setDelete_flag(0);
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);

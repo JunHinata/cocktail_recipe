@@ -1,7 +1,8 @@
 package controllers.recipes;
 
 import java.io.IOException;
-import java.sql.Timestamp;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Recipe;
+import models.RecipeIngredient;
 import utils.DBUtil;
 
 /**
@@ -38,10 +40,17 @@ public class RecipesDestroyServlet extends HttpServlet {
 
             Recipe r = em.find(Recipe.class, (Integer)(request.getSession().getAttribute("recipe_id")));
 
-            r.setDelete_flag(1);
-            r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+            List<RecipeIngredient> ingredients = em.createNamedQuery("getIngredients", RecipeIngredient.class)
+                                                   .setParameter("makeRecipe", r)
+                                                   .getResultList();
+            Iterator<RecipeIngredient> i = ingredients.iterator();
 
             em.getTransaction().begin();
+            while(i.hasNext()) {
+                RecipeIngredient ri = i.next();
+                em.remove(ri);
+            }
+            em.remove(r);
             em.getTransaction().commit();
             em.close();
             request.getSession().setAttribute("flush", "レシピ削除が完了しました。");

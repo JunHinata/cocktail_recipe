@@ -3,6 +3,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:import url="/WEB-INF/views/layout/app_admin.jsp">
     <c:param name="content">
+         <c:if test="${errors != null}">
+            <div id="flush_error">
+                エラーがあります。<br>
+                <c:forEach var="error" items="${errors}">
+                    ・<c:out value="${error}" /><br>
+                </c:forEach>
+            </div>
+        </c:if>
         <c:choose>
             <c:when test="${ingredient != null}">
             <img class="icon" src="/cocktail_recipe/images/shelf_w.png" alt="シェルフアイコン" />

@@ -22,7 +22,12 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getStocksCount",
-            query = "SELECT COUNT(s) FROM Stock AS s WHERE s.stockUser = :user")
+            query = "SELECT COUNT(s) FROM Stock AS s WHERE s.stockUser = :user"
+            ),
+    @NamedQuery(
+            name = "getIngredientStocksCount",
+            query = "SELECT COUNT(s) FROM Stock AS s WHERE s.stockIngredient = :ingredient"
+            )
 })
 @Entity
 public class Stock {

@@ -67,9 +67,6 @@ public class Recipe {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
-    @Column(name = "delete_flag", nullable = false)
-    private Integer delete_flag;
-
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User createUser;
@@ -149,13 +146,6 @@ public class Recipe {
     }
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
-    }
-
-    public Integer getDelete_flag() {
-        return delete_flag;
-    }
-    public void setDelete_flag(Integer delete_flag) {
-        this.delete_flag = delete_flag;
     }
 
     public User getCreateUser() {

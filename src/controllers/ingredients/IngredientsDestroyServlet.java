@@ -1,8 +1,11 @@
 package controllers.ingredients;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,13 +40,36 @@ public class IngredientsDestroyServlet extends HttpServlet {
 
             Ingredient i = em.find(Ingredient.class, (Integer)(request.getSession().getAttribute("ingredient_id")));
 
-            em.getTransaction().begin();
-            em.remove(i);
-            em.getTransaction().commit();
-            em.close();
-            request.getSession().setAttribute("flush", "削除が完了しました。");
+            long stocks_count = (long)em.createNamedQuery("getIngredientStocksCount", Long.class)
+                                        .setParameter("ingredient", i)
+                                        .getSingleResult();
 
-            response.sendRedirect(request.getContextPath() + "/ingredients/index");
+            long recipes_count = (long)em.createNamedQuery("getUsedIngredientsCount", Long.class)
+                                         .setParameter("ingredient", i)
+                                         .getSingleResult();
+
+            if(stocks_count == 0 && recipes_count == 0) {
+                em.getTransaction().begin();
+                em.remove(i);
+                em.getTransaction().commit();
+                em.close();
+                request.getSession().setAttribute("flush", "削除が完了しました。");
+
+                response.sendRedirect(request.getContextPath() + "/ingredients/index");
+            }
+            else{
+                em.close();
+
+                List<String> errors = new ArrayList<String>();
+                errors.add("レシピあるいは在庫管理に対象の材料が使用されているため削除できませんでした。");
+
+                request.setAttribute("_token", request.getSession().getId());
+                request.setAttribute("ingredient", i);
+                request.setAttribute("errors", errors);
+
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/ingredients/edit.jsp");
+                rd.forward(request, response);
+            }
         }
     }
 
