@@ -351,7 +351,15 @@
             <div class="date_user">
                 登録日：<fmt:formatDate value="${recipe.created_at}" pattern="yyyy/MM/dd HH:mm:ss" />&nbsp;
                 更新日：<fmt:formatDate value="${recipe.updated_at}" pattern="yyyy/MM/dd HH:mm:ss" />&nbsp;
-                投稿者：<c:out value="${recipe.createUser.name}" />
+                投稿者：
+                 <c:choose>
+                    <c:when test="${recipe.createUser.admin_flag == '1'}">
+                        管理者
+                    </c:when>
+                    <c:otherwise>
+                        <c:out value="${recipe.createUser.name}" />
+                    </c:otherwise>
+                </c:choose>
             </div>
             <input type="hidden" name="_token" value="${_token}" />
         </form>
