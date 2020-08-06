@@ -1,5 +1,6 @@
 package models;
 
+import java.sql.Blob;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -52,7 +53,7 @@ public class User {
     private String password;
 
     @Column(name = "image")
-    private byte[] image;
+    private Blob image;
 
     @Column(name = "admin_flag", nullable = false)
     private Integer admin_flag;
@@ -94,10 +95,10 @@ public class User {
         this.password = password;
     }
 
-    public byte[] getImage() {
+    public Blob getImage() {
         return image;
     }
-    public void setImage(byte[] image) {
+    public void setImage(Blob image) {
         this.image = image;
     }
 

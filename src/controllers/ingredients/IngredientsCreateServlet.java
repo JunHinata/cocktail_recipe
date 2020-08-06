@@ -43,8 +43,13 @@ public class IngredientsCreateServlet extends HttpServlet {
 
             i.setName(request.getParameter("name"));
             i.setType(request.getParameter("type"));
-            i.setAbv(Integer.parseInt(request.getParameter("abv")));
-            i.setSoda_flag(Integer.parseInt(request.getParameter("soda_flag")));
+
+            if(request.getParameter("abv") != null && !request.getParameter("abv").isEmpty()) {
+                i.setAbv(Integer.parseInt(request.getParameter("abv")));
+            }
+            if(request.getParameter("soda_flag") != null && !request.getParameter("soda_flag").isEmpty()) {
+                i.setSoda_flag(Integer.parseInt(request.getParameter("soda_flag")));
+            }
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             i.setCreated_at(currentTime);

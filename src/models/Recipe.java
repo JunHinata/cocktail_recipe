@@ -1,5 +1,6 @@
 package models;
 
+import java.sql.Blob;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -40,7 +41,7 @@ public class Recipe {
     private String name;
 
     @Column(name = "image")
-    private byte[] image;
+    private Blob image;
 
     @Column(name = "type")
     private String type;
@@ -85,10 +86,10 @@ public class Recipe {
         this.name = name;
     }
 
-    public byte[] getImage() {
+    public Blob getImage() {
         return image;
     }
-    public void setImage(byte[] image) {
+    public void setImage(Blob image) {
         this.image = image;
     }
 

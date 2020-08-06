@@ -8,10 +8,11 @@
             </div>
         </c:if>
         <c:if test="${login_user.admin_flag == 1}">
-            管理者メニュー&nbsp;
-            <a href="<c:url value='/users/index' />">＞ユーザー一覧へ</a>&nbsp;
-            <a href="<c:url value='/ingredients/index' />">＞材料一覧へ</a>
-            <br>
+            <div id="admin_menu">
+                管理者メニュー&nbsp;
+                <a href="<c:url value='/users/index' />">＞ユーザー一覧へ</a>&nbsp;
+                <a href="<c:url value='/ingredients/index' />">＞材料一覧へ</a>
+            </div>
         </c:if>
         <img class="icon" src="/cocktail_recipe/images/shelf_w.png" alt="シェルフアイコン">
         <h1>マイシェルフ</h1>&nbsp;

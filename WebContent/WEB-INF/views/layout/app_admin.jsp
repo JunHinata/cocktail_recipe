@@ -9,29 +9,27 @@
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
     <body id="admin">
-        <div id="wrapper">
-            <div id="header">
+        <div id="header">
+            <div id="header_menu">
                 <a href="<c:url value='/' />"><img id="logo" src="/cocktail_recipe/images/Cockteria.png" alt="Cockteriaのロゴ"></a>
-                <div id="header_menu">
-                    <c:if test="${sessionScope.login_user != null}">
-                        <a href="<c:url value='/stocks/index' />"><img class="menu_icon" src="/cocktail_recipe/images/shelf_o.png" alt="在庫管理アイコン"></a>&nbsp;
-                        <a href="<c:url value='/recipes/index' />"><img class="menu_icon" src="/cocktail_recipe/images/recipe_o.png" alt="レシピ検索アイコン"></a>&nbsp;
-                        <a href="<c:url value='/recipes/new' />"><img class="menu_icon" src="/cocktail_recipe/images/myrecipe_o.png" alt="レシピ投稿アイコン"></a>&nbsp;
-                    </c:if>
-                </div>
-                <div id="user_name">
-                    <c:if test="${sessionScope.login_user != null}">
-                        <c:out value="${sessionScope.login_user.name}" />&nbsp;
-                        <a href="<c:url value='/logout' />">ログアウト</a>
-                    </c:if>
-                </div>
+                <c:if test="${sessionScope.login_user != null}">
+                    <a href="<c:url value='/stocks/index' />"><img class="menu_icon" src="/cocktail_recipe/images/shelf_o.png" alt="在庫管理アイコン">在庫管理　</a>&nbsp;
+                    <a href="<c:url value='/recipes/index' />"><img class="menu_icon" src="/cocktail_recipe/images/recipe_o.png" alt="レシピ検索アイコン">レシピ検索</a>&nbsp;
+                    <a href="<c:url value='/recipes/new' />"><img class="menu_icon" src="/cocktail_recipe/images/myrecipe_o.png" alt="レシピ投稿アイコン">レシピ投稿</a>&nbsp;
+                </c:if>
             </div>
-            <div id="content">
-                ${param.content}
+            <div id="user_name">
+                <c:if test="${sessionScope.login_user != null}">
+                    <c:out value="${sessionScope.login_user.name}" />&nbsp;
+                    <a href="<c:url value='/logout' />">ログアウト</a>
+                </c:if>
             </div>
-            <div id="footer">
-                ©2020 Jun Hinata
-            </div>
+        </div>
+        <div id="content">
+            ${param.content}
+        </div>
+        <div id="footer">
+            ©2020 Jun Hinata
         </div>
     </body>
 </html>

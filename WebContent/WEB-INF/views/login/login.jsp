@@ -16,12 +16,10 @@
             <img id="symbol" src="/cocktail_recipe/images/symbol.png" alt="Cockteriaのシンボル" /><br>
 
             <form method="POST" action="<c:url value='/login' />">
-                <label for="email">ログインID(メールアドレス):</label>
-                <input type="text" name="email" value="${email}" />
+                <input type="text" name="email" value="${email}" placeholder="ログインID（メールアドレス）" />
                 <br><br>
 
-                <label for="password">パスワード:</label>
-                <input type="password" name="password" />
+                <input type="password" name="password" placeholder="パスワード" />
                 <br><br>
 
                 <input type="hidden" name="_token" value="${_token}" />
