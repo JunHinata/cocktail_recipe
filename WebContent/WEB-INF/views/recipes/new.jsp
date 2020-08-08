@@ -17,6 +17,136 @@
             <form id="new" method="POST" action="?">
                 <div class="wrapper">
                     <div id="image">
+                        <c:if test="${recipe.glass == 'ロックグラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/rock_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'タンブラー'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/tumbler_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'カクテルグラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/cocktail_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'リキュールグラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/liqueur_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'ワイングラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/wine_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'シャンパングラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/champagne_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'サワーグラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'ゴブレットグラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'ショットグラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
+                        <c:if test="${recipe.glass == 'その他グラス'}">
+                            <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_clear.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_brown.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_orange.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == 'ピンク'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_pink.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '赤'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_red.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黄'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_yellow.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '白'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_white.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '緑'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_green.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '青'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_blue.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_purple.png" alt="レシピアイコン"></c:if>
+                            <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_black.png" alt="レシピアイコン"></c:if>
+                        </c:if>
                     </div>
                     <div id="data">
                         <table id="show">

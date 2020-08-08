@@ -20,6 +20,18 @@
                     <form method="POST" action="<c:url value='/ingredients/update' />">
                         <div class="wrapper">
                             <div id="image">
+                                <c:if test="${ingredient.type == 'スピリッツ'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/spirits.png" alt="材料アイコン">
+                                </c:if>
+                                <c:if test="${ingredient.type == 'リキュール'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/liqueur.png" alt="材料アイコン">
+                                </c:if>
+                                <c:if test="${ingredient.type == 'その他酒'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/other.png" alt="材料アイコン">
+                                </c:if>
+                                <c:if test="${ingredient.type == '副材料'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/sub.png" alt="材料アイコン">
+                                </c:if>
                             </div>
                             <div id="data">
                                 <table id="show">

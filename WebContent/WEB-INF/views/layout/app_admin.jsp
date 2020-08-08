@@ -20,6 +20,7 @@
             </div>
             <div id="user_name">
                 <c:if test="${sessionScope.login_user != null}">
+                    <img id="small_user_image" src="/cocktail_recipe/images/user.png" alt="ユーザーアイコン">
                     <c:out value="${sessionScope.login_user.name}" />&nbsp;
                     <a href="<c:url value='/logout' />">ログアウト</a>
                 </c:if>

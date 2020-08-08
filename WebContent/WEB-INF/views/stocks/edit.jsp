@@ -12,6 +12,18 @@
                     <form id="edit" method="POST" action="<c:url value='/stocks/update' />">
                         <div class="wrapper">
                             <div id="image">
+                                <c:if test="${stock.stockIngredient.type == 'スピリッツ'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/spirits.png" alt="材料アイコン">
+                                </c:if>
+                                <c:if test="${stock.stockIngredient.type == 'リキュール'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/liqueur.png" alt="材料アイコン">
+                                </c:if>
+                                <c:if test="${stock.stockIngredient.type == 'その他酒'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/other.png" alt="材料アイコン">
+                                </c:if>
+                                <c:if test="${stock.stockIngredient.type == '副材料'}">
+                                    <img id="ing_image" src="/cocktail_recipe/images/sub.png" alt="材料アイコン">
+                                </c:if>
                             </div>
                             <div id="data">
                                 <table id="show">

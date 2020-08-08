@@ -11,6 +11,7 @@
                     <form method="POST" action="<c:url value='/users/update' />">
                         <div class="wrapper">
                             <div id="image">
+                                <img id="user_image" src="/cocktail_recipe/images/user.png" alt="ユーザーアイコン">
                             </div>
                             <div id="data">
                                 <table id="show">
