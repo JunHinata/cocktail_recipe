@@ -1,4 +1,4 @@
-#  Compiled class file
+# Compiled class file
 *.class
 
 # Package Files #
@@ -18,6 +18,10 @@ build/
 # OS Files
 Thumbs.db
 .DS_Store
+
+# Other Files
+*.sql
+*.csv
 
 # Application Properties
 WebContent/META-INF/application.properties

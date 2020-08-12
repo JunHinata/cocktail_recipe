@@ -18,7 +18,38 @@
                             <c:out value="${i}" />&nbsp;
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value='/ingredients/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                            <form id="page_transition" method="POST" action="<c:url value='/recipes/ingredient_edit' />">
+                                <input type="hidden" name="_token" value="${_token}" />
+                                <input type="hidden" name="ing_number" value="${ing_number}" />
+                                <input type="hidden" name="ing1_vol" value="${ing1_vol}" />
+                                <input type="hidden" name="ing2_vol" value="${ing2_vol}" />
+                                <input type="hidden" name="ing3_vol" value="${ing3_vol}" />
+                                <input type="hidden" name="ing4_vol" value="${ing4_vol}" />
+                                <input type="hidden" name="ing5_vol" value="${ing5_vol}" />
+                                <input type="hidden" name="ing6_vol" value="${ing6_vol}" />
+                                <input type="hidden" name="ing7_vol" value="${ing7_vol}" />
+                                <input type="hidden" name="ing8_vol" value="${ing8_vol}" />
+                                <input type="hidden" name="ing9_vol" value="${ing9_vol}" />
+                                <input type="hidden" name="ing10_vol" value="${ing10_vol}" />
+                                <input type="hidden" name="ing1_type" value="${ing1_type}" />
+                                <input type="hidden" name="ing2_type" value="${ing2_type}" />
+                                <input type="hidden" name="ing3_type" value="${ing3_type}" />
+                                <input type="hidden" name="ing4_type" value="${ing4_type}" />
+                                <input type="hidden" name="ing5_type" value="${ing5_type}" />
+                                <input type="hidden" name="ing6_type" value="${ing6_type}" />
+                                <input type="hidden" name="ing7_type" value="${ing7_type}" />
+                                <input type="hidden" name="ing8_type" value="${ing8_type}" />
+                                <input type="hidden" name="ing9_type" value="${ing9_type}" />
+                                <input type="hidden" name="ing10_type" value="${ing10_type}" />
+                                <input type="hidden" name="name" value="${recipe.name}" />
+                                <input type="hidden" name="type" value="${recipe.type}" />
+                                <input type="hidden" name="color" value="${recipe.color}" />
+                                <input type="hidden" name="taste" value="${recipe.taste}" />
+                                <input type="hidden" name="glass" value="${recipe.glass}" />
+                                <input type="hidden" name="technique" value="${recipe.technique}" />
+                                <input type="hidden" name="introduction" value="${recipe.introduction}" />
+                            </form>
+                            <button class="page_anchor" type="submit" form="page_transition" name="page" value="${i}"><c:out value="${i}" /></button>&nbsp;
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
@@ -87,7 +118,7 @@
                             <c:out value="${i}" />&nbsp;
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value='/ingredients/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                            <button class="page_anchor" type="submit" form="page_transition" name="page" value="${i}"><c:out value="${i}" /></button>&nbsp;
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>

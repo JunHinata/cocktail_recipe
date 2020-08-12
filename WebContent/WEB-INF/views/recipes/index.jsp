@@ -116,7 +116,7 @@
                                 <c:if test="${recipe.color == '紫'}"><img id="small_recipe_image" src="/cocktail_recipe/images/sour_glass_purple.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == '黒'}"><img id="small_recipe_image" src="/cocktail_recipe/images/sour_glass_black.png" alt="レシピアイコン"></c:if>
                             </c:if>
-                            <c:if test="${recipe.glass == 'ゴブレットグラス'}">
+                            <c:if test="${recipe.glass == 'ゴブレット'}">
                                 <c:if test="${recipe.color == '透明'}"><img id="small_recipe_image" src="/cocktail_recipe/images/goblet_glass_clear.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'ブラウン'}"><img id="small_recipe_image" src="/cocktail_recipe/images/goblet_glass_brown.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'オレンジ'}"><img id="small_recipe_image" src="/cocktail_recipe/images/goblet_glass_orange.png" alt="レシピアイコン"></c:if>
@@ -142,7 +142,7 @@
                                 <c:if test="${recipe.color == '紫'}"><img id="small_recipe_image" src="/cocktail_recipe/images/shot_glass_purple.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == '黒'}"><img id="small_recipe_image" src="/cocktail_recipe/images/shot_glass_black.png" alt="レシピアイコン"></c:if>
                             </c:if>
-                            <c:if test="${recipe.glass == 'その他グラス'}">
+                            <c:if test="${recipe.glass == 'その他'}">
                                 <c:if test="${recipe.color == '透明'}"><img id="small_recipe_image" src="/cocktail_recipe/images/others_glass_clear.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'ブラウン'}"><img id="small_recipe_image" src="/cocktail_recipe/images/others_glass_brown.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'オレンジ'}"><img id="small_recipe_image" src="/cocktail_recipe/images/others_glass_orange.png" alt="レシピアイコン"></c:if>
@@ -173,7 +173,7 @@
                             <h2 class="cocktail_name"><c:out value="${recipe.name}" /></h2>
                             <table class="ingredients">
                                 <tbody>
-                                    <c:forEach var="ingredient" items="${ingredients}" begin="0" end="4" varStatus="status">
+                                    <c:forEach var="ingredient" items="${ingredients}" varStatus="status">
                                         <tr>
                                             <c:if test="${recipe.id == ingredient.makeRecipe.id}">
                                                 <th><c:out value="${ingredient.useIngredient.name}" /></th>

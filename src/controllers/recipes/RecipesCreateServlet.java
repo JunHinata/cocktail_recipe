@@ -228,28 +228,28 @@ public class RecipesCreateServlet extends HttpServlet {
                 em.persist(r);
                 em.persist(ri1);
                 em.persist(ri2);
-                if(ri3.getVol() != null) {
+                if(ri3.getUseIngredient() != null) {
                     em.persist(ri3);
                 }
-                if(ri4.getVol() != null) {
+                if(ri4.getUseIngredient() != null) {
                     em.persist(ri4);
                 }
-                if(ri5.getVol() != null) {
+                if(ri5.getUseIngredient() != null) {
                     em.persist(ri5);
                 }
-                if(ri6.getVol() != null) {
+                if(ri6.getUseIngredient() != null) {
                     em.persist(ri6);
                 }
-                if(ri7.getVol() != null) {
+                if(ri7.getUseIngredient() != null) {
                     em.persist(ri7);
                 }
-                if(ri8.getVol() != null) {
+                if(ri8.getUseIngredient() != null) {
                     em.persist(ri8);
                 }
-                if(ri9.getVol() != null) {
+                if(ri9.getUseIngredient() != null) {
                     em.persist(ri9);
                 }
-                if(ri10.getVol() != null) {
+                if(ri10.getUseIngredient() != null) {
                     em.persist(ri10);
                 }
                 em.getTransaction().commit();

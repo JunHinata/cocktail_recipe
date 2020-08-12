@@ -57,6 +57,12 @@ a {
     color: #436cff;
 }
 
+pre {
+    font-family: "Yu Gothic Medium",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    color: #616161;
+}
+
 table, tr, th, td {
     border: 1px solid #ffffff;
 }
@@ -116,6 +122,10 @@ select, option {
     font-size: 12px;
     color: #616161;
     height: 20px;
+}
+
+form#page_transition {
+    display: inline;
 }
 
 body#admin {
@@ -795,5 +805,17 @@ button.as_red_anchor {
     border: none;
 }
 button.as_red_anchor:hover {
+    cursor: pointer;
+}
+
+button.page_anchor {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0px 0px;
+    background-color: #ffffff;
+    color: #436cff;
+    border: none;
+}
+button.page_anchor:hover {
     cursor: pointer;
 }

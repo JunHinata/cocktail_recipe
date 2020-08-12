@@ -109,7 +109,7 @@
                                 <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_purple.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/sour_glass_black.png" alt="レシピアイコン"></c:if>
                             </c:if>
-                            <c:if test="${recipe.glass == 'ゴブレットグラス'}">
+                            <c:if test="${recipe.glass == 'ゴブレット'}">
                                 <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_clear.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_brown.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/goblet_glass_orange.png" alt="レシピアイコン"></c:if>
@@ -135,7 +135,7 @@
                                 <c:if test="${recipe.color == '紫'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_purple.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == '黒'}"><img id="recipe_image" src="/cocktail_recipe/images/shot_glass_black.png" alt="レシピアイコン"></c:if>
                             </c:if>
-                            <c:if test="${recipe.glass == 'その他グラス'}">
+                            <c:if test="${recipe.glass == 'その他'}">
                                 <c:if test="${recipe.color == '透明'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_clear.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'ブラウン'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_brown.png" alt="レシピアイコン"></c:if>
                                 <c:if test="${recipe.color == 'オレンジ'}"><img id="recipe_image" src="/cocktail_recipe/images/others_glass_orange.png" alt="レシピアイコン"></c:if>
@@ -220,7 +220,7 @@
                         </div>
                         <div id="introduction">
                             <h2 class="introduction">作り方・紹介コメント</h2>
-                            <c:out value="${recipe.introduction}" />
+                            <pre><c:out value="${recipe.introduction}" /></pre>
                         </div>
                     </div>
                     <div id="date_user">
