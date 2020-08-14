@@ -14,6 +14,10 @@ import javax.persistence.Table;
 @Table(name = "recipe_ingredients")
 @NamedQueries({
     @NamedQuery(
+            name = "getAllRecipeIngredients",
+            query = "SELECT i FROM RecipeIngredient AS i ORDER BY i.id ASC"
+            ),
+    @NamedQuery(
             name = "getIngredients",
             query = "SELECT i FROM RecipeIngredient AS i WHERE i.makeRecipe = :makeRecipe ORDER BY i.id ASC"
             ),

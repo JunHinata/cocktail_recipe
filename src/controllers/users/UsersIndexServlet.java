@@ -1,6 +1,7 @@
 package controllers.users;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -41,10 +42,47 @@ public class UsersIndexServlet extends HttpServlet {
         }
         catch(NumberFormatException e) {
         }
-        List<User> users = em.createNamedQuery("getAllUsers", User.class)
-                             .setFirstResult(30 * (page - 1))
-                             .setMaxResults(30)
-                             .getResultList();
+
+        String user_search = request.getParameter("user_search");
+
+        List<User> users = new ArrayList<User>();
+
+        if(user_search != null && !user_search.isEmpty()) {
+            if(user_search.equals("更新日時順")) {
+                users.clear();
+                users.addAll(em.createNamedQuery("getAllUsersUpdated", User.class)
+                               .setFirstResult(30 * (page - 1))
+                               .setMaxResults(30)
+                               .getResultList());
+            }
+            else if(user_search.equals("ユーザー名順")) {
+                users.clear();
+                users.addAll(em.createNamedQuery("getAllUsersName", User.class)
+                               .setFirstResult(30 * (page - 1))
+                               .setMaxResults(30)
+                               .getResultList());
+            }
+            else if(user_search.equals("ID昇順")) {
+                users.clear();
+                users.addAll(em.createNamedQuery("getAllUsersASC", User.class)
+                               .setFirstResult(30 * (page - 1))
+                               .setMaxResults(30)
+                               .getResultList());
+            }
+            else{
+                users.clear();
+                users.addAll(em.createNamedQuery("getAllUsers", User.class)
+                               .setFirstResult(30 * (page - 1))
+                               .setMaxResults(30)
+                               .getResultList());
+            }
+        }
+        else{
+            users.addAll(em.createNamedQuery("getAllUsers", User.class)
+                           .setFirstResult(30 * (page - 1))
+                           .setMaxResults(30)
+                           .getResultList());
+        }
 
         long users_count = (long)em.createNamedQuery("getUsersCount", Long.class)
                                    .getSingleResult();
@@ -54,6 +92,7 @@ public class UsersIndexServlet extends HttpServlet {
         request.setAttribute("users", users);
         request.setAttribute("users_count", users_count);
         request.setAttribute("page", page);
+        request.setAttribute("user_search", user_search);
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");

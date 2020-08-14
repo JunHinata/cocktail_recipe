@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllMyStocks",
-            query = "SELECT s FROM Stock AS s WHERE s.stockUser = :user"
+            query = "SELECT s FROM Stock AS s WHERE s.stockUser = :user ORDER BY s.vol DESC, s.updated_at DESC"
             ),
     @NamedQuery(
             name = "getStocksCount",

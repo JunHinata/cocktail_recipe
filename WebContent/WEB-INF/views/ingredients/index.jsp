@@ -11,7 +11,21 @@
         <img class="icon" src="/cocktail_recipe/images/shelf_w.png" alt="シェルフアイコン" />
         <h1>材料一覧　管理者専用</h1>
         <div class="window">
-            <a class="small_blue_button" href="<c:url value='/ingredients/new' />">材料新規登録</a>
+            <div id="search">
+                <form id="search_form" method="GET" action="<c:url value='/ingredients/index' />">
+                    <select name="type_search">
+                        <option value="">材料分類</option>
+                        <option value="スピリッツ" <c:if test="${type_search == 'スピリッツ'}">selected</c:if>>スピリッツ</option>
+                        <option value="リキュール" <c:if test="${type_search == 'リキュール'}">selected</c:if>>リキュール</option>
+                        <option value="その他酒" <c:if test="${type_search == 'その他酒'}">selected</c:if>>その他酒</option>
+                        <option value="副材料" <c:if test="${type_search == '副材料'}">selected</c:if>>副材料</option>
+                    </select>&nbsp;
+                    <input type="text" name="name_search" value="${name_search}" placeholder="材料名検索" />&nbsp;
+                    <button class="small_orange_button" type="submit">絞込・検索</button>&emsp;
+                    <a class="small_blue_button" href="<c:url value='/ingredients/new' />">材料新規登録</a>
+                </form>
+            </div>
+
             <div class="pagination">
                 <c:forEach var="i" begin="1" end="${((ingredients_count - 1) / 30) + 1}" step="1">
                     <c:choose>
@@ -19,7 +33,7 @@
                             <c:out value="${i}" />&nbsp;
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value='/ingredients/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                            <button class="page_anchor" type="submit" form="search_form" name="page" value="${i}"><c:out value="${i}" /></button>&nbsp;
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
@@ -62,7 +76,7 @@
                             <c:out value="${i}" />&nbsp;
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value='/ingredients/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                            <button class="page_anchor" type="submit" form="search_form" name="page" value="${i}"><c:out value="${i}" /></button>&nbsp;
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>

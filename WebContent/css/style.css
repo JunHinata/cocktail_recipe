@@ -4,6 +4,7 @@ body {
     font-family: "Yu Gothic Medium",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
     color: #ffffff;
     background-color: #f3981d;
+    line-height: 1.5;
 }
 
 button {
@@ -18,9 +19,9 @@ button {
 }
 
 #content {
-    width: 94%;
     margin-top: 15px;
-    padding-left: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 h1 {
@@ -128,6 +129,18 @@ form#page_transition {
     display: inline;
 }
 
+form#search_recipe {
+    font-family: "Yu Gothic Medium",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 2;
+    margin-left: 5%;
+    color: #616161;
+}
+
+form#search_recipe label {
+    color: #f3981d;
+}
+
 body#admin {
     background-color: #0d47a0;
 }
@@ -137,10 +150,18 @@ body#admin {
     justify-content: space-between;
 }
 
+.recipe_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
 .window {
     background-color: #ffffff;
     padding: 10px 10px;
     margin-top: 15px;
+    margin-bottom: 15px;
     border-radius: 5px;
 }
 
@@ -149,7 +170,7 @@ body#admin {
     width: 30%;
     background-color: #ffffff;
     padding: 10px 10px;
-    margin-top: 15px;
+    margin: 15px 0px;
     border-radius: 5px;
 }
 
@@ -784,6 +805,19 @@ button.blue_button:hover {
     cursor: pointer;
 }
 
+button.small_orange_button {
+    text-decoration: none;
+    font-size: 12px;
+    padding: 2px 15px;
+    background-color: #f3981d;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+button.small_orange_button:hover {
+    cursor: pointer;
+}
+
 button.as_anchor {
     text-decoration: underline;
     font-size: 12px;
@@ -817,5 +851,17 @@ button.page_anchor {
     border: none;
 }
 button.page_anchor:hover {
+    cursor: pointer;
+}
+
+button.recipe_page_anchor {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0px 0px;
+    background-color: #f3981d;
+    color: #436cff;
+    border: none;
+}
+button.recipe_page_anchor:hover {
     cursor: pointer;
 }

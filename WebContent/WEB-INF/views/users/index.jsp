@@ -10,7 +10,18 @@
         </c:if>
         <h1>ユーザー一覧　管理者専用</h1>
         <div class="window">
-            <a class="small_blue_button" href="<c:url value='/users/new' />">新規ユーザー登録</a>
+            <div id="search">
+                <form id="search_form" method="GET" action="<c:url value='/users/index' />">
+                    <select name="user_search">
+                        <option value="ID降順" <c:if test="${user_search == 'ID降順'}">selected</c:if>>ID降順</option>
+                        <option value="ID昇順" <c:if test="${user_search == 'ID昇順'}">selected</c:if>>ID昇順</option>
+                        <option value="ユーザー名順" <c:if test="${user_search == 'ユーザー名順'}">selected</c:if>>ユーザー名順</option>
+                        <option value="更新日時順" <c:if test="${user_search == '更新日時順'}">selected</c:if>>更新日時順</option>
+                    </select>&nbsp;
+                    <button class="small_orange_button" type="submit">並べ替え</button>&emsp;
+                    <a class="small_blue_button" href="<c:url value='/users/new' />">新規ユーザー登録</a>
+                </form>
+            </div>
             <div class="pagination">
                 <c:forEach var="i" begin="1" end="${((users_count - 1) / 30) + 1}" step="1">
                     <c:choose>
@@ -18,7 +29,7 @@
                             <c:out value="${i}" />&nbsp;
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value='/users/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                            <button class="page_anchor" form="search_form" type="submit" name="page" value="${i}"><c:out value="${i}" /></button>&nbsp;
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
@@ -70,7 +81,7 @@
                             <c:out value="${i}" />&nbsp;
                         </c:when>
                         <c:otherwise>
-                            <a href="<c:url value='/users/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                            <button class="page_anchor" form="search_form" type="submit" name="page" value="${i}"><c:out value="${i}" /></button>&nbsp;
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>

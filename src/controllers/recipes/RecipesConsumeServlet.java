@@ -81,7 +81,6 @@ public class RecipesConsumeServlet extends HttpServlet {
                                 consumptions.add(s.getStockIngredient().getName() + "の在庫が無くなりました。");
                             }
                             em.getTransaction().commit();
-                            em.close();
                         }
                     }
                 }
@@ -90,6 +89,7 @@ public class RecipesConsumeServlet extends HttpServlet {
                 request.getSession().setAttribute("consumptions", consumptions);
             }
 
+            em.close();
             response.sendRedirect(request.getContextPath() + "/recipes/show?id=" + r.getId());
         }
     }

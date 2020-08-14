@@ -2,6 +2,7 @@ package controllers.stocks;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -45,13 +46,33 @@ public class StocksIndexServlet extends HttpServlet {
         catch(NumberFormatException e) {
         }
 
+        String stock_search = request.getParameter("stock_search");
+        String type_search = request.getParameter("type_search");
+        String name_search = request.getParameter("name_search");
+
         User login_user = (User)request.getSession().getAttribute("login_user");
 
-        List<Ingredient> ingredients = em.createNamedQuery("getAllIngredients", Ingredient.class)
-                                         .getResultList();
+        List<Ingredient> s_ingredients = em.createNamedQuery("getTypeIngredients", Ingredient.class)
+                                           .setParameter("type", "スピリッツ")
+                                           .getResultList();
 
-        long ingredients_count = (long)em.createNamedQuery("getIngredientsCount", Long.class)
-                                         .getSingleResult();
+        List<Ingredient> l_ingredients = em.createNamedQuery("getTypeIngredients", Ingredient.class)
+                .setParameter("type", "リキュール")
+                .getResultList();
+
+        List<Ingredient> o_ingredients = em.createNamedQuery("getTypeIngredients", Ingredient.class)
+                .setParameter("type", "その他酒")
+                .getResultList();
+
+        List<Ingredient> sub_ingredients = em.createNamedQuery("getTypeIngredients", Ingredient.class)
+                .setParameter("type", "副材料")
+                .getResultList();
+
+        List<Ingredient> ingredients = new ArrayList<Ingredient>();
+        ingredients.addAll(s_ingredients);
+        ingredients.addAll(l_ingredients);
+        ingredients.addAll(o_ingredients);
+        ingredients.addAll(sub_ingredients);
 
         List<Stock> stocks = em.createNamedQuery("getAllMyStocks", Stock.class)
                                .setParameter("user", login_user)
@@ -64,6 +85,104 @@ public class StocksIndexServlet extends HttpServlet {
             for(int i = 0; i < stocks.size(); i++) {
                 no_stocks.remove(stocks.get(i).getStockIngredient());
             }
+        }
+
+        //在庫有無による絞込
+        if(stock_search != null && !stock_search.isEmpty()) {
+            if(stock_search.equals("在庫あり")) {
+                no_stocks.clear();
+            }
+            else if(stock_search.equals("在庫なし")) {
+                stocks.clear();
+            }
+        }
+
+        //材料分類による絞込
+        if(type_search != null && !type_search.isEmpty()) {
+            Iterator<Stock> stocksIterator = stocks.iterator();
+            Iterator<Ingredient> no_stocksIterator = no_stocks.iterator();
+            if(type_search.equals("スピリッツ")) {
+                while(stocksIterator.hasNext()) {
+                    Stock s = stocksIterator.next();
+                    if(!s.getStockIngredient().getType().equals("スピリッツ")) {
+                        stocksIterator.remove();
+                    }
+                }
+                while(no_stocksIterator.hasNext()) {
+                    Ingredient i = no_stocksIterator.next();
+                    if(!i.getType().equals("スピリッツ")) {
+                        no_stocksIterator.remove();
+                    }
+                }
+            }
+            if(type_search.equals("リキュール")) {
+                while(stocksIterator.hasNext()) {
+                    Stock s = stocksIterator.next();
+                    if(!s.getStockIngredient().getType().equals("リキュール")) {
+                        stocksIterator.remove();
+                    }
+                }
+                while(no_stocksIterator.hasNext()) {
+                    Ingredient i = no_stocksIterator.next();
+                    if(!i.getType().equals("リキュール")) {
+                        no_stocksIterator.remove();
+                    }
+                }
+            }
+            if(type_search.equals("その他酒")) {
+                while(stocksIterator.hasNext()) {
+                    Stock s = stocksIterator.next();
+                    if(!s.getStockIngredient().getType().equals("その他酒")) {
+                        stocksIterator.remove();
+                    }
+                }
+                while(no_stocksIterator.hasNext()) {
+                    Ingredient i = no_stocksIterator.next();
+                    if(!i.getType().equals("その他酒")) {
+                        no_stocksIterator.remove();
+                    }
+                }
+            }
+            if(type_search.equals("副材料")) {
+                while(stocksIterator.hasNext()) {
+                    Stock s = stocksIterator.next();
+                    if(!s.getStockIngredient().getType().equals("副材料")) {
+                        stocksIterator.remove();
+                    }
+                }
+                while(no_stocksIterator.hasNext()) {
+                    Ingredient i = no_stocksIterator.next();
+                    if(!i.getType().equals("副材料")) {
+                        no_stocksIterator.remove();
+                    }
+                }
+            }
+        }
+
+        //材料名による絞込
+        if(name_search != null && !name_search.isEmpty()) {
+            Iterator<Stock> stocksIterator = stocks.iterator();
+            Iterator<Ingredient> no_stocksIterator = no_stocks.iterator();
+            while(stocksIterator.hasNext()) {
+                Stock s = stocksIterator.next();
+                if(!s.getStockIngredient().getName().contains(name_search)) {
+                    stocksIterator.remove();
+                }
+            }
+            while(no_stocksIterator.hasNext()) {
+                Ingredient i = no_stocksIterator.next();
+                if(!i.getName().contains(name_search)) {
+                    no_stocksIterator.remove();
+                }
+            }
+        }
+
+        //ページ総数計算のために材料数カウント
+        long ingredients_count = stocks.size() + no_stocks.size();
+
+        //絞込条件入力直後にページネーションから遷移された場合の対策
+        if(ingredients_count <= 30 * (page - 1)) {
+            page = 1;
         }
 
         //在庫リストと在庫にない材料リストを表示するものだけに絞って切り取る
@@ -105,6 +224,9 @@ public class StocksIndexServlet extends HttpServlet {
         request.setAttribute("no_stocks", no_stocks);
         request.setAttribute("ingredients_count", ingredients_count);
         request.setAttribute("page", page);
+        request.setAttribute("stock_search", stock_search);
+        request.setAttribute("type_search", type_search);
+        request.setAttribute("name_search", name_search);
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");

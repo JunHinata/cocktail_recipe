@@ -19,6 +19,18 @@ import javax.persistence.Table;
             query = "SELECT u FROM User AS u ORDER BY u.id DESC"
             ),
     @NamedQuery(
+            name = "getAllUsersASC",
+            query = "SELECT u FROM User AS u ORDER BY u.id ASC"
+            ),
+    @NamedQuery(
+            name = "getAllUsersName",
+            query = "SELECT u FROM User AS u ORDER BY u.name ASC"
+            ),
+    @NamedQuery(
+            name = "getAllUsersUpdated",
+            query = "SELECT u FROM User AS u ORDER BY u.updated_at DESC"
+            ),
+    @NamedQuery(
             name = "getUsersCount",
             query = "SELECT COUNT(u) FROM User AS u"
             ),

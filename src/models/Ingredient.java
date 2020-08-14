@@ -16,7 +16,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllIngredients",
-            query = "SELECT i FROM Ingredient AS i ORDER BY i.id DESC"
+            query = "SELECT i FROM Ingredient AS i ORDER BY i.type ASC, i.name ASC"
+            ),
+    @NamedQuery(
+            name = "getTypeIngredients",
+            query = "SELECT i FROM Ingredient AS i WHERE i.type = :type ORDER BY i.name ASC"
             ),
     @NamedQuery(
             name = "getIngredientsCount",
