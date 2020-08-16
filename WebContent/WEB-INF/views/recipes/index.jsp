@@ -11,52 +11,92 @@
         <h1>レシピ検索</h1>
             <div class="window">
                 <form id="search_recipe" method="GET" action="<c:url value='/recipes/index' />">
-                    <label>カクテル名検索：　</label><input type="text" name="cocktail_search" value="${cocktail_search}" />
-                    　　　　<label>材料名検索：　</label><input type="text" name="ingredient_search" value="${ingredient_search}" />
-                    <br><br>
-                    <label>投稿者：　　　　　</label><input type="checkbox" name="basic" value="1" <c:if test="${basic == '1'}">checked</c:if>>&nbsp;ベーシック　　　
-                    <input type="checkbox" name="my_recipe" value="1" <c:if test="${my_recipe == '1'}">checked</c:if>>&nbsp;マイレシピ　　　
-                    <input type="checkbox" name="others_recipe" value="1" <c:if test="${others_recipe == '1'}">checked</c:if>>&nbsp;他ユーザーレシピ
-                    <br>
-                    <label>材料在庫：　　　　</label><input type="checkbox" name="stock" value="1" <c:if test="${stock == '1'}">checked</c:if>>&nbsp;あり　　　　　　
-                    <input type="checkbox" name="no_stock" value="1" <c:if test="${no_stock == '1'}">checked</c:if>>&nbsp;なし　　　　　　
-                    <br>
-                    <label>タイプ：　　　　　</label><input type="checkbox" name="type_short" value="1" <c:if test="${type_short == '1'}">checked</c:if>>&nbsp;ショート　　　　
-                    <input type="checkbox" name="type_long" value="1" <c:if test="${type_long == '1'}">checked</c:if>>&nbsp;ロング　　　　　
-                    <input type="checkbox" name="type_hot" value="1" <c:if test="${type_hot == '1'}">checked</c:if>>&nbsp;ホット　　　　　
-                    <br>
-                    <label>テイスト：　　　　</label><input type="checkbox" name="sweet" value="1" <c:if test="${sweet == '1'}">checked</c:if>>&nbsp;甘口　　　　　　
-                    <input type="checkbox" name="dry" value="1" <c:if test="${dry == '1'}">checked</c:if>>&nbsp;辛口　　　　　　
-                    <input type="checkbox" name="m_dry" value="1" <c:if test="${m_dry == '1'}">checked</c:if>>&nbsp;中辛　　　　　　
-                    <input type="checkbox" name="medium" value="1" <c:if test="${medium == '1'}">checked</c:if>>&nbsp;中甘辛口　　　　
-                    <br>
-                    <label>技法：　　　　　　</label><input type="checkbox" name="shake" value="1" <c:if test="${shake == '1'}">checked</c:if>>&nbsp;シェイク　　　　
-                    <input type="checkbox" name="stir" value="1" <c:if test="${stir == '1'}">checked</c:if>>&nbsp;ステア　　　　　
-                    <input type="checkbox" name="build" value="1" <c:if test="${build == '1'}">checked</c:if>>&nbsp;ビルド　　　　　
-                    <input type="checkbox" name="blend" value="1" <c:if test="${blend == '1'}">checked</c:if>>&nbsp;ブレンド　　　　
-                    <br>
-                    <label>色：　　　　　　　</label><input type="checkbox" name="clear" value="1" <c:if test="${clear == '1'}">checked</c:if>>&nbsp;透明　　　　　　
-                    <input type="checkbox" name="brown" value="1" <c:if test="${brown == '1'}">checked</c:if>>&nbsp;ブラウン　　　　
-                    <input type="checkbox" name="orange" value="1" <c:if test="${orange == '1'}">checked</c:if>>&nbsp;オレンジ　　　　
-                    <input type="checkbox" name="pink" value="1" <c:if test="${pink == '1'}">checked</c:if>>&nbsp;ピンク　　　　　
-                    <br>
-                    　　　　　　　　　<input type="checkbox" name="red" value="1" <c:if test="${red == '1'}">checked</c:if>>&nbsp;赤　　　　　　　
-                    <input type="checkbox" name="yellow" value="1" <c:if test="${yellow == '1'}">checked</c:if>>&nbsp;黄　　　　　　　
-                    <input type="checkbox" name="white" value="1" <c:if test="${white == '1'}">checked</c:if>>&nbsp;白　　　　　　　
-                    <input type="checkbox" name="green" value="1" <c:if test="${green == '1'}">checked</c:if>>&nbsp;緑　　　　　　　
-                    <br>
-                    　　　　　　　　　<input type="checkbox" name="blue" value="1" <c:if test="${blue == '1'}">checked</c:if>>&nbsp;青　　　　　　　
-                    <input type="checkbox" name="purple" value="1" <c:if test="${purple == '1'}">checked</c:if>>&nbsp;紫　　　　　　　
-                    <input type="checkbox" name="black" value="1" <c:if test="${black == '1'}">checked</c:if>>&nbsp;黒　　　　　　　
-                    <br>
-                    <label>炭酸：　　　　　　</label><input type="checkbox" name="soda" value="1" <c:if test="${soda == '1'}">checked</c:if>>&nbsp;あり　　　　　　
-                    <input type="checkbox" name="no_soda" value="1" <c:if test="${no_soda == '1'}">checked</c:if>>&nbsp;なし　　　　　　
-                    <br>
-                    <label>アルコール度数：　</label><input type="checkbox" name="weak" value="1" <c:if test="${weak == '1'}">checked</c:if>>&nbsp;～８度　　　　　
-                    <input type="checkbox" name="moderate" value="1" <c:if test="${moderate == '1'}">checked</c:if>>&nbsp;９～２４度　　　
-                    <input type="checkbox" name="strong" value="1" <c:if test="${strong == '1'}">checked</c:if>>&nbsp;２５度～　　　　
-                    <br><br>
-                    <button class="orange_button" type="submit">検索</button>
+                    <table class="word_search">
+                        <tbody>
+                            <tr>
+                                <th>カクテル名検索：</th>
+                                <td><input type="text" name="cocktail_search" value="${cocktail_search}" /></td>
+                                <th>材料名検索：</th>
+                                <td><input type="text" name="ingredient_search" value="${ingredient_search}" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="check_search">
+                        <tbody>
+                            <tr>
+                                <th>投稿者：</th>
+                                <td><input type="checkbox" name="basic" value="1" <c:if test="${basic == '1'}">checked</c:if>>&nbsp;ベーシック</td>
+                                <td><input type="checkbox" name="my_recipe" value="1" <c:if test="${my_recipe == '1'}">checked</c:if>>&nbsp;マイレシピ</td>
+                                <td><input type="checkbox" name="others_recipe" value="1" <c:if test="${others_recipe == '1'}">checked</c:if>>&nbsp;他ユーザーレシピ</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>材料在庫：</th>
+                                <td><input type="checkbox" name="stock" value="1" <c:if test="${stock == '1'}">checked</c:if>>&nbsp;あり</td>
+                                <td><input type="checkbox" name="no_stock" value="1" <c:if test="${no_stock == '1'}">checked</c:if>>&nbsp;なし</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>タイプ：</th>
+                                <td><input type="checkbox" name="type_short" value="1" <c:if test="${type_short == '1'}">checked</c:if>>&nbsp;ショート</td>
+                                <td><input type="checkbox" name="type_long" value="1" <c:if test="${type_long == '1'}">checked</c:if>>&nbsp;ロング</td>
+                                <td><input type="checkbox" name="type_hot" value="1" <c:if test="${type_hot == '1'}">checked</c:if>>&nbsp;ホット</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>テイスト：</th>
+                                <td><input type="checkbox" name="sweet" value="1" <c:if test="${sweet == '1'}">checked</c:if>>&nbsp;甘口</td>
+                                <td><input type="checkbox" name="dry" value="1" <c:if test="${dry == '1'}">checked</c:if>>&nbsp;辛口</td>
+                                <td><input type="checkbox" name="m_dry" value="1" <c:if test="${m_dry == '1'}">checked</c:if>>&nbsp;中辛</td>
+                                <td><input type="checkbox" name="medium" value="1" <c:if test="${medium == '1'}">checked</c:if>>&nbsp;中甘辛口</td>
+                            </tr>
+                            <tr>
+                                <th>技法：</th>
+                                <td><input type="checkbox" name="shake" value="1" <c:if test="${shake == '1'}">checked</c:if>>&nbsp;シェイク</td>
+                                <td><input type="checkbox" name="stir" value="1" <c:if test="${stir == '1'}">checked</c:if>>&nbsp;ステア</td>
+                                <td><input type="checkbox" name="build" value="1" <c:if test="${build == '1'}">checked</c:if>>&nbsp;ビルド</td>
+                                <td><input type="checkbox" name="blend" value="1" <c:if test="${blend == '1'}">checked</c:if>>&nbsp;ブレンド</td>
+                            </tr>
+                            <tr>
+                                <th>色：</th>
+                                <td><input type="checkbox" name="clear" value="1" <c:if test="${clear == '1'}">checked</c:if>>&nbsp;透明</td>
+                                <td><input type="checkbox" name="brown" value="1" <c:if test="${brown == '1'}">checked</c:if>>&nbsp;ブラウン</td>
+                                <td><input type="checkbox" name="orange" value="1" <c:if test="${orange == '1'}">checked</c:if>>&nbsp;オレンジ</td>
+                                <td><input type="checkbox" name="pink" value="1" <c:if test="${pink == '1'}">checked</c:if>>&nbsp;ピンク</td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><input type="checkbox" name="red" value="1" <c:if test="${red == '1'}">checked</c:if>>&nbsp;赤</td>
+                                <td><input type="checkbox" name="yellow" value="1" <c:if test="${yellow == '1'}">checked</c:if>>&nbsp;黄</td>
+                                <td><input type="checkbox" name="white" value="1" <c:if test="${white == '1'}">checked</c:if>>&nbsp;白</td>
+                                <td><input type="checkbox" name="green" value="1" <c:if test="${green == '1'}">checked</c:if>>&nbsp;緑</td>
+                            <tr>
+                                <th></th>
+                                <td><input type="checkbox" name="blue" value="1" <c:if test="${blue == '1'}">checked</c:if>>&nbsp;青</td>
+                                <td><input type="checkbox" name="purple" value="1" <c:if test="${purple == '1'}">checked</c:if>>&nbsp;紫</td>
+                                <td><input type="checkbox" name="black" value="1" <c:if test="${black == '1'}">checked</c:if>>&nbsp;黒</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>炭酸：</th>
+                                <td><input type="checkbox" name="soda" value="1" <c:if test="${soda == '1'}">checked</c:if>>&nbsp;あり</td>
+                                <td><input type="checkbox" name="no_soda" value="1" <c:if test="${no_soda == '1'}">checked</c:if>>&nbsp;なし</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>アルコール度数：</th>
+                                <td><input type="checkbox" name="weak" value="1" <c:if test="${weak == '1'}">checked</c:if>>&nbsp;～８度</td>
+                                <td><input type="checkbox" name="moderate" value="1" <c:if test="${moderate == '1'}">checked</c:if>>&nbsp;９～２４度</td>
+                                <td><input type="checkbox" name="strong" value="1" <c:if test="${strong == '1'}">checked</c:if>>&nbsp;２５度～</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="search_button">
+                        <button class="search_button" type="submit">検索</button>
+                    </div>
                 </form>
             </div>
             <div class="pagination_w">
@@ -225,8 +265,8 @@
                                 <table class="ingredients">
                                     <tbody>
                                         <c:forEach var="ingredient" items="${ingredients}" varStatus="status">
-                                            <tr>
-                                                <c:if test="${recipe.id == ingredient.makeRecipe.id}">
+                                            <c:if test="${recipe.id == ingredient.makeRecipe.id}">
+                                                <tr>
                                                     <th><c:out value="${ingredient.useIngredient.name}" /></th>
                                                     <td>
                                                         <c:if test="${ingredient.type == 'ml'}"><c:out value="${ingredient.vol}" /> ml</c:if>
@@ -235,8 +275,8 @@
                                                         <c:if test="${ingredient.type == '個'}"><c:out value="${ingredient.vol}" /> 個</c:if>
                                                         <c:if test="${ingredient.type == '適量'}"> 適量</c:if>
                                                     </td>
-                                                </c:if>
-                                            </tr>
+                                                </tr>
+                                            </c:if>
                                         </c:forEach>
                                     </tbody>
                                 </table>

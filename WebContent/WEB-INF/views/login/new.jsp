@@ -16,7 +16,7 @@
             <form method="POST" enctype="multipart/form-data" action="<c:url value='/login/create' />">
                 <div class="wrapper">
                     <div id="image">
-                       <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                       <%-- <input type="file" name="image" accept=".png, .jpg, .jpeg"> --%>
                     </div>
                     <div id="data">
                         <table id="show">

@@ -1,9 +1,6 @@
 package controllers.login;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Blob;
-import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -15,11 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-import javax.sql.rowset.serial.SerialBlob;
-import javax.sql.rowset.serial.SerialException;
-
-import org.apache.commons.io.IOUtils;
 
 import models.User;
 import models.validators.LoginValidator;
@@ -56,6 +48,7 @@ public class LoginCreateServlet extends HttpServlet {
             u.setEmail(request.getParameter("email"));
             u.setAdmin_flag(0);
 
+            /* 画像アップロードは保留
             Part filePart = request.getPart("image");
             InputStream fileContent = filePart.getInputStream();
             byte[] byteArray = IOUtils.toByteArray(fileContent);
@@ -69,6 +62,7 @@ public class LoginCreateServlet extends HttpServlet {
                 // TODO 自動生成された catch ブロック
                 e.printStackTrace();
             }
+            */
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             u.setCreated_at(currentTime);

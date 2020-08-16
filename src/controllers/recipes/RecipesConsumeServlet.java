@@ -1,6 +1,7 @@
 package controllers.recipes;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,6 +74,8 @@ public class RecipesConsumeServlet extends HttpServlet {
                             em.getTransaction().begin();
                             if(s.getVol() > consumed_vol) {
                                 s.setVol(s.getVol() - consumed_vol);
+                                Timestamp currentTime = new Timestamp(System.currentTimeMillis());
+                                s.setUpdated_at(currentTime);
                                 em.persist(s);
                                 consumptions.add(s.getStockIngredient().getName() + "を" + consumed_vol + "ml消費しました。在庫数量は残り約" + s.getVol() + "mlです。");
                             }

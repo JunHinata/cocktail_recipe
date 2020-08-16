@@ -30,7 +30,7 @@
             ${param.content}
         </div>
         <div id="footer">
-            ©2020 Jun Hinata
+            ©2020　<img id="copyright" src="/cocktail_recipe/images/copyright.png" alt="Jun Hinta">
         </div>
     </body>
 </html>

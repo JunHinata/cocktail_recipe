@@ -95,10 +95,10 @@ button {
 }
 
 #footer {
-    height: 50px;
+    height: 60px;
     font-size: 14px;
     text-align: center;
-    padding-top: 18px;
+    padding-top: 15px;
     margin-top: 70px;
     color: #616161;
     background-color: #ffffff;
@@ -132,13 +132,8 @@ form#page_transition {
 form#search_recipe {
     font-family: "Yu Gothic Medium",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
     font-size: 12px;
-    line-height: 2;
     margin-left: 5%;
     color: #616161;
-}
-
-form#search_recipe label {
-    color: #f3981d;
 }
 
 body#admin {
@@ -161,7 +156,7 @@ body#admin {
     background-color: #ffffff;
     padding: 10px 10px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     border-radius: 5px;
 }
 
@@ -207,6 +202,12 @@ img#logo {
     height: 60px;
     margin-right: 80px;
     color: #f3981d;
+}
+
+img#copyright {
+    width: 100px;
+    height: 40px;
+    vertical-align: middle;
 }
 
 img#symbol {
@@ -257,6 +258,11 @@ img#recipe_image {
     height: 200px;
     border: 1px solid #f3981d;
     border-radius: 100px;
+}
+
+img#stock {
+    width: 100px;
+    height: 150px
 }
 
 #flush_success {
@@ -452,6 +458,23 @@ div.recipe_list2 {
     color: #616161;
 }
 
+div.search_button {
+    text-align: center;
+}
+
+div.stock {
+    font-family: "Yu Gothic Medium",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    width: 16%;
+    padding: 0% 1%;
+    text-align: center;
+    color: #616161;
+}
+
+div.stock_button {
+    margin: 8px 0px;
+}
+
 table#user_list .id {
     width: 10%;
 }
@@ -525,13 +548,13 @@ table.ingredients {
 }
 
 table.ingredients th {
-    width: 70%;
+    width: 60%;
     padding-left: 10px;
     text-align: left;
 }
 
 table.ingredients td {
-    width: 30%;
+    width: 20%;
     padding-right:10px;
     text-align: right;
 }
@@ -595,6 +618,40 @@ table input {
 table select {
     width: 70%;
     height: 20px;
+}
+
+table.word_search {
+    width: 80%;
+}
+
+table.word_search th {
+    width: 25%;
+    text-align: left;
+    color: #f3981d;
+}
+
+table.word_search td {
+    width: 25%;
+    text-align: left;
+}
+
+table.check_search {
+    width: 100%;
+}
+
+table.check_search th {
+    width: 20%;
+    text-align: left;
+    color: #f3981d;
+}
+
+table.check_search td {
+    width: 20%;
+    text-align: left;
+}
+
+table.check_search input {
+    width: auto;
 }
 
 div#form_type input {
@@ -802,6 +859,20 @@ button.blue_button {
     border-radius: 15px;
 }
 button.blue_button:hover {
+    cursor: pointer;
+}
+
+button.search_button {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 3px 45px;
+    margin: 8px 0px;
+    background-color: #f3981d;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+}
+button.search_button:hover {
     cursor: pointer;
 }
 
