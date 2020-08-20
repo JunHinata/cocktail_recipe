@@ -11,7 +11,7 @@
                     <form method="POST" action="<c:url value='/users/update' />">
                         <div class="wrapper">
                             <div id="image">
-                                <img id="user_image" src="/cocktail_recipe/images/user.png" alt="ユーザーアイコン">
+                                <img id="user_image" src="https://i.gyazo.com/9c8f70a433980f3f85f4bcf3895b6a3c.png" alt="ユーザーアイコン">
                             </div>
                             <div id="data">
                                 <table id="show">

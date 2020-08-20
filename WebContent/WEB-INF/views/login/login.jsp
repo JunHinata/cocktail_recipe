@@ -13,7 +13,7 @@
             </div>
         </c:if>
         <div id="login">
-            <img id="symbol" src="/cocktail_recipe/images/symbol.png" alt="Cockteriaのシンボル" /><br>
+            <img id="symbol" src="https://i.gyazo.com/ffdf81a1d2cfe290f44fd37cac6ea5e4.png" alt="Cockteriaのシンボル" /><br>
 
             <form method="POST" action="<c:url value='/login' />">
                 <input type="text" name="email" value="${email}" placeholder="ログインID（メールアドレス）" />

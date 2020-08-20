@@ -5,22 +5,22 @@
     <c:param name="content">
         <c:choose>
             <c:when test="${ingredient != null}">
-            <img class="icon" src="/cocktail_recipe/images/shelf_w.png" alt="シェルフアイコン" />
+            <img class="icon" src="https://i.gyazo.com/35990234ef6818e036880daab876f135.png" alt="シェルフアイコン" />
                 <h1>材料詳細　管理者専用</h1>
                 <div class="window">
                     <div class="wrapper">
                         <div id="image">
                             <c:if test="${ingredient.type == 'スピリッツ'}">
-                                <img id="ing_image" src="/cocktail_recipe/images/spirits.png" alt="材料アイコン">
+                                <img id="ing_image" src="https://i.gyazo.com/838632ff50d7006d800410e52b0f9d65.png" alt="材料アイコン">
                             </c:if>
                             <c:if test="${ingredient.type == 'リキュール'}">
-                                <img id="ing_image" src="/cocktail_recipe/images/liqueur.png" alt="材料アイコン">
+                                <img id="ing_image" src="https://i.gyazo.com/994e42d95f430afabddba0bdffc81d58.png" alt="材料アイコン">
                             </c:if>
                             <c:if test="${ingredient.type == 'その他酒'}">
-                                <img id="ing_image" src="/cocktail_recipe/images/other.png" alt="材料アイコン">
+                                <img id="ing_image" src="https://i.gyazo.com/7a10ea4506d419085f157fdb4af9d70d.png" alt="材料アイコン">
                             </c:if>
                             <c:if test="${ingredient.type == '副材料'}">
-                                <img id="ing_image" src="/cocktail_recipe/images/sub.png" alt="材料アイコン">
+                                <img id="ing_image" src="https://i.gyazo.com/a8e9ed23b27b0995ad7d1b6e525793a5.png" alt="材料アイコン">
                             </c:if>
                         </div>
                         <div id="data">

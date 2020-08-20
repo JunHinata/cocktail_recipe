@@ -8,7 +8,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <img class="icon" src="/cocktail_recipe/images/myrecipe_w.png" alt="マイレシピアイコン" />
+        <img class="icon" src="https://i.gyazo.com/ad1e9f436fb68e5d46b1d49dec4d9361.png" alt="マイレシピアイコン" />
         <h1>マイレシピ材料選択</h1>
         <div class="window">
             <div id="search">

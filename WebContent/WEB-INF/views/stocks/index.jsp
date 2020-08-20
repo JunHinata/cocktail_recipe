@@ -8,7 +8,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <img class="icon" src="/cocktail_recipe/images/shelf_w.png" alt="シェルフアイコン" />
+        <img class="icon" src="https://i.gyazo.com/35990234ef6818e036880daab876f135.png" alt="シェルフアイコン" />
         <h1>在庫管理</h1>
         <div class="window">
             <div id="search">
